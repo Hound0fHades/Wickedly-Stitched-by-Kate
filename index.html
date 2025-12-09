@@ -292,6 +292,17 @@
       color: var(--muted);
     }
 
+    /* Raven footprint trail under most section headers */
+    .section-header::after,
+    .calendar-section:not(.about-section) .calendar-header::after {
+      content: "⋔   ⋔   ⋔";
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.4em;
+      color: rgba(163, 163, 199, 0.55); /* soft muted lavender */
+    }
+
     /* Calendar / generic card sections */
 
     .calendar-section {
@@ -325,7 +336,7 @@
       max-width: 24rem;
     }
 
-    /* Sakura Highlight + Petals for About Section */
+    /* Sakura Highlight + small, subtle Petals for About Section */
     .about-section {
       position: relative;
       overflow: hidden;
@@ -336,26 +347,25 @@
       box-shadow: 0 18px 50px rgba(244, 180, 214, 0.25);
     }
 
-    /* keep the content above the effects */
     .about-section > * {
       position: relative;
       z-index: 1;
     }
 
-    /* floating sakura petals (soft, subtle) */
+    /* floating sakura petals (small, subtle, smooth) */
     .about-section::before {
       content: "";
       position: absolute;
-      inset: -40%;
+      inset: -30%;
       pointer-events: none;
-      opacity: 0.35;
+      opacity: 0.22;
       background-image:
-        radial-gradient(ellipse at top, rgba(244, 180, 214, 0.7) 0, transparent 55%),
-        radial-gradient(ellipse at center, rgba(244, 180, 214, 0.6) 0, transparent 60%),
-        radial-gradient(ellipse at bottom, rgba(244, 180, 214, 0.5) 0, transparent 60%);
-      background-size: 30% 30%, 26% 26%, 22% 22%;
-      background-position: 10% -10%, 60% 10%, 90% 40%;
-      animation: sakuraPetals 22s linear infinite;
+        radial-gradient(ellipse at top,   rgba(244, 180, 214, 0.7) 0, transparent 60%),
+        radial-gradient(ellipse at center,rgba(244, 180, 214, 0.55) 0, transparent 65%),
+        radial-gradient(ellipse at bottom,rgba(244, 180, 214, 0.45) 0, transparent 68%);
+      background-size: 16% 16%, 13% 13%, 11% 11%;
+      background-position: 8% -5%, 55% 8%, 92% 36%;
+      animation: sakuraPetals 28s linear infinite;
     }
 
     .about-section .calendar-header h3 {
@@ -371,16 +381,20 @@
       color: var(--accent-soft);
     }
 
-    /* sakura petal drift animation */
+    /* Remove raven prints from About header (we want it pure Sakura) */
+    .about-section .calendar-header::after {
+      content: none;
+    }
+
     @keyframes sakuraPetals {
       0% {
-        transform: translate3d(0, -20px, 0) rotate(0deg);
+        transform: translate3d(0, -8px, 0) rotate(0deg);
       }
       50% {
-        transform: translate3d(-20px, 20px, 0) rotate(6deg);
+        transform: translate3d(-10px, 10px, 0) rotate(3deg);
       }
       100% {
-        transform: translate3d(-40px, 50px, 0) rotate(10deg);
+        transform: translate3d(-20px, 20px, 0) rotate(6deg);
       }
     }
 
@@ -696,7 +710,7 @@
           </div>
         </section>
 
-        <!-- About the Designer (sakura pink + petals) -->
+        <!-- About the Designer (sakura pink + subtle petals) -->
         <section id="about" class="calendar-section about-section" style="margin-top: 2.5rem;">
           <div class="calendar-header">
             <h3>About the Designer</h3>
@@ -835,7 +849,7 @@
                 <div class="item-title">Stitch Witch Cosplay</div>
                 <div class="item-meta">
                   <span>Layered textures · Dramatic details</span>
-                  <span class="item-price">Quote-based</span>
+                  <span class="item-price">Custom quote</span>
                 </div>
                 <div class="item-cta">Use this as inspiration</div>
               </div>
