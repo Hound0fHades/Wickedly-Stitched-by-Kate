@@ -647,7 +647,7 @@
             </p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
             <!-- FORMAL GOWNS -->
             <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem;">
               Formal Gowns
@@ -707,7 +707,7 @@
         </section>
 
         <!-- FAQ section -->
-        <section id="faq" class="calendar-section" style="margin-top: 2.5rem;">
+        <section id="faq" class="calendar-section" style="margin-top: 2.5rem%;">
           <div class="calendar-header">
             <h3>FAQ &amp; Policies</h3>
             <p>
@@ -776,7 +776,7 @@
         <section id="gallery">
           <div class="section-header">
             <h3>Featured Pieces</h3>
-            <p>Click any look below to pre-fill your inquiry with that design.</p>
+            <p>Click any look below to pre-fill your inquiry with that design (optional).</p>
           </div>
 
           <div class="gallery-grid">
@@ -864,14 +864,16 @@
         <h3>Ready to talk details?</h3>
         <p>
           Share your idea, event date, pick from the options below, and upload any reference photos.
+          Selecting a design from the gallery is completely optional – you can use one as inspiration
+          or just describe your concept from scratch.
           When you click email, you’ll be able to attach those same images in your mail app.
           Kate will follow up with questions, a timeline estimate, and a custom quote.
         </p>
 
         <div class="selected-item">
-          <div class="selected-item-label">Selected design</div>
+          <div class="selected-item-label">Selected design (optional)</div>
           <div class="selected-item-name" id="selectedItemName">
-            None selected yet – tap a piece in the gallery or email about a new idea.
+            Optional – you can tap a piece in the gallery to use as inspiration, or leave this blank and just describe your idea below.
           </div>
         </div>
 
@@ -1025,7 +1027,8 @@
 
     function resetSelection() {
       selectedDesign = '';
-      selectedNameEl.textContent = 'None selected yet – tap a piece in the gallery or email about a new idea.';
+      selectedNameEl.textContent =
+        'Optional – you can tap a piece in the gallery to use as inspiration, or leave this blank and just describe your idea below.';
       document.getElementById('clientName').value = '';
       document.getElementById('eventDate').value = '';
       document.getElementById('projectType').value = '';
@@ -1054,7 +1057,7 @@
       }
 
       if (selectedDesign) {
-        body += 'Selected inspiration from website:\n' +
+        body += 'Selected inspiration from website (optional):\n' +
                 selectedDesign + '\n\n';
       }
 
