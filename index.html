@@ -325,7 +325,7 @@
       max-width: 24rem;
     }
 
-    /* SVG raven footprint trail under most section headers (except About) */
+    /* Raven footprints under headers (everywhere except About) */
     .section-header::after,
     .calendar-section:not(.about-section) .calendar-header::after {
       content: "";
@@ -338,7 +338,7 @@
       opacity: 0.75;
     }
 
-    /* Sakura Highlight + smaller, subtle petals for About Section */
+    /* Sakura Highlight + petals for About Section */
     .about-section {
       position: relative;
       overflow: hidden;
@@ -354,20 +354,16 @@
       z-index: 1;
     }
 
-    /* Smaller, smoother sakura petals */
+    /* CRISP Sakura petals using SVG pattern (no blur) */
     .about-section::before {
       content: "";
       position: absolute;
-      inset: -25%;
+      inset: -10px;
       pointer-events: none;
-      opacity: 0.18;
-      background-image:
-        radial-gradient(ellipse at top,    rgba(244, 180, 214, 0.7) 0, transparent 40%),
-        radial-gradient(ellipse at center, rgba(244, 180, 214, 0.55) 0, transparent 45%),
-        radial-gradient(ellipse at bottom, rgba(244, 180, 214, 0.45) 0, transparent 50%);
-      background-size: 10% 10%, 8% 8%, 6% 6%;
-      background-position: 12% -6%, 50% 8%, 86% 30%;
-      animation: sakuraPetals 28s linear infinite;
+      opacity: 0.45;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23f4b4d6' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 22c3 2 4 5 3 8-3-1-6-2-8-5 1-2 3-3 5-3z'/%3E%3Cpath d='M54 16c3 2 4 5 3 8-3-1-6-2-8-5 1-2 3-3 5-3z'/%3E%3Cpath d='M40 46c2.5 2 3.5 4.5 2.5 7.5-2.8-1-5.3-2-7.5-4.5 1-2 2.8-3 5-3z'/%3E%3Cpath d='M12 56c2 1.5 2.8 3.5 2 5.8-2.2-.7-4.2-1.5-5.8-3.5C9 57 10.4 56 12 56z'/%3E%3Cpath d='M62 60c2.2 1.6 3.2 3.8 2.4 6.2-2.4-.8-4.6-1.7-6.4-3.8C59 61 60.4 60.2 62 60z'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 120px 120px;
     }
 
     .about-section .calendar-header h3 {
@@ -386,18 +382,6 @@
     /* Remove raven prints from About header */
     .about-section .calendar-header::after {
       content: none;
-    }
-
-    @keyframes sakuraPetals {
-      0% {
-        transform: translate3d(0, -6px, 0) rotate(0deg);
-      }
-      50% {
-        transform: translate3d(-8px, 8px, 0) rotate(3deg);
-      }
-      100% {
-        transform: translate3d(-16px, 16px, 0) rotate(6deg);
-      }
     }
 
     /* Gallery */
