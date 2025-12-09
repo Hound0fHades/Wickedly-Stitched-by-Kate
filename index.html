@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wickedly Stitched by Kate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wickedly Stitched by Kate – fashion stitched with a little magic. Custom gowns, cosplay, performance wear, lingerie, and corsetry by owner & designer Katelyn &quot;Kate the Stitch Witch&quot; Law Sarver." />
+
+  <style>
+    :root {
+      --bg: #050409;           /* inky night */
+      --bg-alt: #0b0910;       /* deeper panels */
+      --panel: #15121c;        /* gothic plum */
+      --accent: #f4b4d6;       /* sakura pink */
+      --accent-soft: #fce7f3;  /* pale blossom */
+      --accent-dark: #111827;  /* crow charcoal */
+      --text: #f9fafb;
+      --muted: #a3a3b5;
+      --border: #383349;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(244, 180, 214, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.85), #02010a 85%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      margin: 0 -1.25rem 1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to right, rgba(5, 4, 9, 0.95), rgba(15, 23, 42, 0.8));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(252, 231, 243, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 30% 0%, rgba(244, 180, 214, 0.4), rgba(15, 23, 42, 0.95)),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.8), #020309);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+      font-size: 1.25rem;
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    nav a.primary {
+      border-color: rgba(244, 180, 214, 0.9);
+      color: var(--text);
+      background: radial-gradient(circle at 30% 0%, rgba(244, 180, 214, 0.25), rgba(88, 28, 135, 0.9));
+      box-shadow: 0 18px 40px rgba(30, 64, 175, 0.55);
+    }
+
+    /* Layout main */
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Hero / intro */
+
+    .intro-card {
+      background:
+        linear-gradient(to bottom right, rgba(21, 18, 28, 0.96), rgba(5, 4, 9, 0.98)),
+        radial-gradient(circle at top right, rgba(244, 180, 214, 0.22), transparent 60%);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.5rem 1.25rem;
+      border: 1px solid rgba(252, 231, 243, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-card::before {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(252, 231, 243, 0.45) 0, transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(244, 180, 214, 0.3) 0, transparent 50%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .intro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+    }
+
+    .intro-card h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-card h2 span {
+      color: var(--accent);
+    }
+
+    .intro-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 35rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .intro-footer {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 20rem;
+    }
+
+    /* Section header */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h3 {
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-header p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Gallery */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .item-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+      cursor: pointer;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+      position: relative;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      border-color: rgba(244, 180, 214, 0.85);
+    }
+
+    .item-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: radial-gradient(circle at top, #27272f, #020617);
+    }
+
+    .item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item-tag {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(5, 4, 9, 0.9);
+      color: var(--accent-soft);
+      border: 1px solid rgba(244, 180, 214, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .item-body {
+      padding: 0.7rem 0.75rem 0.7rem;
+    }
+
+    .item-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .item-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      gap: 0.4rem;
+    }
+
+    .item-price {
+      color: var(--accent-soft);
+      font-weight: 500;
+    }
+
+    .item-cta {
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    /* Panel (email me directly) */
+
+    .panel {
+      background:
+        radial-gradient(circle at top, rgba(15, 23, 42, 0.98), rgba(5, 4, 9, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.2rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      position: sticky;
+      top: 5rem;
+    }
+
+    .panel h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.4rem;
+    }
+
+    .panel p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .selected-item {
+      background: var(--accent-dark);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.6rem 0.7rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.8rem;
+    }
+
+    .selected-item-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .selected-item-name {
+      font-weight: 500;
+      color: var(--accent-soft);
+    }
+
+    .button-primary {
+      border-radius: 999px;
+      border: 1px solid rgba(244, 180, 214, 0.9);
+      padding: 0.55rem 0.9rem;
+      background: radial-gradient(circle at 30% 0%, rgba(244, 180, 214, 0.25), rgba(88, 28, 135, 0.9));
+      color: var(--text);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      margin-top: 0.3rem;
+      box-shadow: 0 14px 35px rgba(30, 64, 175, 0.7);
+      width: 100%;
+      text-align: center;
+    }
+
+    .button-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.45rem 0.8rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .small-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Calendar / generic card sections */
+
+    .calendar-section {
+      margin-top: 2.25rem;
+      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.85));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1.2rem 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .calendar-header h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .calendar-header p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 24rem;
+    }
+
+    .calendar-frame {
+      margin-top: 0.75rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #020617;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .calendar-frame iframe {
+      width: 100%;
+      border: 0;
+      height: 420px;
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">✂️</div>
+      <div class="brand-text">
+        <h1>Wickedly Stitched by Kate</h1>
+        <span>Owner &amp; Designer — Katelyn "Kate the Stitch Witch" Law Sarver</span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#calendar">Availability</a>
+      <a href="#order" class="primary">Request a Piece</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="layout">
+      <!-- Left: Intro + Services + FAQ + Gallery -->
+      <div>
+        <section class="intro-card" id="top">
+          <div class="intro-badge">
+            <div class="intro-badge-dot"></div>
+            <span>Accepting limited custom bookings</span>
+          </div>
+          <h2>
+            Fashion stitched with a little <span>magic</span>.
+          </h2>
+          <p class="intro-subtitle">
+            Kate, also known as “Kate the Stitch Witch,” specializes in modern gowns, cosplay, performance wear,
+            lingerie, and corsets – all crafted to fit your body, your event, and your story.
+          </p>
+
+          <div class="intro-list">
+            <div class="pill">Custom gowns &amp; formalwear</div>
+            <div class="pill">Cosplay &amp; performance costumes</div>
+            <div class="pill">Lingerie &amp; corsetry</div>
+            <div class="pill">Alterations (by appointment)</div>
+          </div>
+
+          <div class="intro-footer">
+            <p class="intro-note">
+              Tap a look in the gallery to pre-fill your inquiry, or email about a completely new design.
+              Kate will follow up with pricing, timeline, and fitting details based on your idea and availability.
+            </p>
+          </div>
+        </section>
+
+        <!-- Services section -->
+        <section id="services" class="calendar-section" style="margin-top: 2.5rem;">
+          <div class="calendar-header">
+            <h3>Services &amp; Custom Work</h3>
+            <p>
+              Every piece is made to order. Pricing is based on design complexity, materials, and timeline. 
+              Below are general guidelines—final quotes are provided after consultation.
+            </p>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+            <!-- FORMAL GOWNS -->
+            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem;">
+              Formal Gowns
+            </h4>
+            <p style="margin-bottom: 0.75rem;">
+              Custom gowns designed and fitted for your body and event. Most gowns require around 
+              <strong>40 or more hours of labor</strong> plus all <strong>fabric and supply costs</strong>. 
+              Because each design is unique, gown pricing is <strong>quote-based</strong>. 
+              <em>Message for a personalized quote based on your design, fabrics, and timeline.</em>
+            </p>
+
+            <!-- COSPLAY BUILDS -->
+            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
+              Cosplay Builds
+            </h4>
+            <p style="margin-bottom: 0.75rem;">
+              Character-inspired looks, armor-style builds, and performance-ready cosplay. Cosplay is priced similarly 
+              to formal gowns—many projects require <strong>40+ hours of labor</strong> plus materials, and are 
+              <strong>quoted individually</strong> after discussing the character, details, and deadline.
+            </p>
+
+            <!-- PERFORMANCE WEAR -->
+            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
+              Performance Wear
+            </h4>
+            <p style="margin-bottom: 0.75rem;">
+              Custom costumes and stage pieces for dancers, performers, and entertainers. Standard projects are billed at 
+              <strong>$35/hour for labor</strong>, plus materials. Rush projects follow the same rush structure as other 
+              custom builds, with higher hourly rates if your deadline is under a month.
+            </p>
+
+            <!-- LINGERIE & CORSETRY -->
+            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
+              Lingerie &amp; Corsetry
+            </h4>
+            <p style="margin-bottom: 0.75rem;">
+              Custom-fit corsets, bodysuits, and lingerie sets built for support, comfort, and confidence. Standard labor 
+              is billed at <strong>$40/hour</strong>, plus materials. Rush projects use the same rush rates as other custom work 
+              when deadlines are tight.
+            </p>
+
+            <!-- ALTERATIONS -->
+            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
+              Alterations
+            </h4>
+            <p style="margin-bottom: 0.75rem;">
+              Select alterations on formalwear and special pieces to improve fit and comfort. Standard alteration work is 
+              billed at <strong>$30/hour</strong> for labor. Rush alterations are billed at a higher hourly rate when you 
+              need them completed quickly.
+            </p>
+
+            <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">
+              For all projects, final pricing is confirmed after a short consultation about design, fabric choices, 
+              timeline, and fittings. Rush projects may be billed at higher hourly rates depending on your deadline.
+            </p>
+          </div>
+        </section>
+
+        <!-- FAQ section -->
+        <section id="faq" class="calendar-section" style="margin-top: 2.5rem;">
+          <div class="calendar-header">
+            <h3>FAQ &amp; Policies</h3>
+            <p>
+              A quick look at how custom work is booked, priced, and scheduled with Wickedly Stitched by Kate.
+            </p>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
+              The remaining balance is due at or before pickup/final delivery.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do rush orders work?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              If you need your piece on a tight timeline, rush pricing applies to labor so that late requests are
+              scheduled fairly and sustainably:
+            </p>
+            <ul style="margin-left: 1.1rem; margin-bottom: 0.9rem; font-size: 0.9rem;">
+              <li>
+                For all custom builds (formal gowns, cosplay, performance wear, lingerie and corsetry):
+                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
+                  <li>Deadlines <strong>under one month</strong> are billed at <strong>$60/hour</strong> for labor.</li>
+                  <li>Deadlines <strong>under two weeks</strong> are billed at <strong>$80/hour</strong> for labor.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 0.5rem;">
+                For alterations:
+                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
+                  <li>Standard alteration work is <strong>$30/hour</strong>.</li>
+                  <li>Rush alterations with deadlines <strong>under one month</strong> are billed at <strong>$50/hour</strong>.</li>
+                  <li>Rush alterations with deadlines <strong>under two weeks</strong> are billed at <strong>$70/hour</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+            <p style="margin-bottom: 0.9rem;">
+              Rush availability depends on Kate’s current workload. Materials and supplies are always charged separately from labor.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How long does a formal gown take?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Most custom gowns require at least <strong>40 hours of labor</strong> plus time for sourcing materials and fittings. 
+              It’s best to reach out as early as possible, especially for weddings, formals, or major events.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Where are fittings done? Do you ship?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Fittings are primarily available in the Franklin County, VA area. Some items—such as lingerie, certain cosplay 
+              elements, and select performance pieces—may be able to be shipped depending on the design and fit requirements. 
+              Full gowns and heavily structured garments typically require in-person fittings.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do I get a quote?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Click <strong>Request a Piece</strong> to email directly about your project, or email 
+              <a href="mailto:katethestitchwitch@gmail.com" style="color: var(--accent-soft);">
+                katethestitchwitch@gmail.com
+              </a>. Share your idea, event date, and any inspiration photos. Kate will follow up with questions, a 
+              timeline estimate, and a custom quote.
+            </p>
+          </div>
+        </section>
+
+        <!-- Gallery (placeholder images for now) -->
+        <section id="gallery">
+          <div class="section-header">
+            <h3>Featured Pieces</h3>
+            <p>Click any look below to pre-fill your inquiry with that design.</p>
+          </div>
+
+          <div class="gallery-grid">
+            <!-- ITEM 1 -->
+            <article class="item-card"
+              data-item-name="Midnight Siren Gown"
+              data-item-type="Formal gown"
+              data-item-price="Custom quote">
+              <div class="item-image">
+                <img src="https://via.placeholder.com/600x800?text=Midnight+Siren+Gown" alt="Midnight Siren Gown">
+                <span class="item-tag">Formal</span>
+              </div>
+              <div class="item-body">
+                <div class="item-title">Midnight Siren Gown</div>
+                <div class="item-meta">
+                  <span>Structured bodice · Flowing skirt</span>
+                  <span class="item-price">Quote-based</span>
+                </div>
+                <div class="item-cta">Use this as inspiration</div>
+              </div>
+            </article>
+
+            <!-- ITEM 2 -->
+            <article class="item-card"
+              data-item-name="Stitch Witch Cosplay"
+              data-item-type="Cosplay build"
+              data-item-price="Custom quote">
+              <div class="item-image">
+                <img src="https://via.placeholder.com/600x800?text=Stitch+Witch+Cosplay" alt="Stitch Witch cosplay outfit">
+                <span class="item-tag">Cosplay</span>
+              </div>
+              <div class="item-body">
+                <div class="item-title">Stitch Witch Cosplay</div>
+                <div class="item-meta">
+                  <span>Layered textures · Dramatic details</span>
+                  <span class="item-price">Quote-based</span>
+                </div>
+                <div class="item-cta">Use this as inspiration</div>
+              </div>
+            </article>
+
+            <!-- ITEM 3 -->
+            <article class="item-card"
+              data-item-name="Ember Corset Set"
+              data-item-type="Lingerie & corsetry"
+              data-item-price="$40/hr + materials">
+              <div class="item-image">
+                <img src="https://via.placeholder.com/600x800?text=Ember+Corset+Set" alt="Ember corset lingerie set">
+                <span class="item-tag">Corsetry</span>
+              </div>
+              <div class="item-body">
+                <div class="item-title">Ember Corset Set</div>
+                <div class="item-meta">
+                  <span>Boned bodice · Custom sizing</span>
+                  <span class="item-price">$40/hr + materials</span>
+                </div>
+                <div class="item-cta">Use this as inspiration</div>
+              </div>
+            </article>
+
+            <!-- ITEM 4 -->
+            <article class="item-card"
+              data-item-name="Stage Ember Jumpsuit"
+              data-item-type="Performance wear"
+              data-item-price="$35/hr + materials">
+              <div class="item-image">
+                <img src="https://via.placeholder.com/600x800?text=Performance+Jumpsuit" alt="Sparkling performance jumpsuit">
+                <span class="item-tag">Performance</span>
+              </div>
+              <div class="item-body">
+                <div class="item-title">Stage Ember Jumpsuit</div>
+                <div class="item-meta">
+                  <span>Stretch base · Rhinestone detail</span>
+                  <span class="item-price">$35/hr + materials</span>
+                </div>
+                <div class="item-cta">Use this as inspiration</div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right: Email panel -->
+      <aside class="panel" id="order">
+        <h3>Ready to talk details?</h3>
+        <p>
+          Tap a look in the gallery (or come with your own idea), then click below to email Kate directly
+          about your project.
+        </p>
+
+        <div class="selected-item">
+          <div class="selected-item-label">Selected design</div>
+          <div class="selected-item-name" id="selectedItemName">
+            None selected yet – tap a piece in the gallery or email about a new idea.
+          </div>
+        </div>
+
+        <button type="button" class="button-primary" onclick="emailKateDirectly()">
+          Email me directly
+        </button>
+
+        <button
+          type="button"
+          class="button-secondary"
+          onclick="resetSelection()">
+          Clear selected design
+        </button>
+
+        <p class="small-note">
+          This will open your email app with a pre-filled message to 
+          <a href="mailto:katethestitchwitch@gmail.com">katethestitchwitch@gmail.com</a>. You can edit everything
+          before sending. A 50% deposit is required to book, and rush projects may be billed at a higher hourly
+          rate depending on your deadline.
+        </p>
+      </aside>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="calendar">
+      <div class="calendar-header">
+        <h3>Studio Availability</h3>
+        <p>
+          Use the calendar below to check general availability for consultations, fittings, and pickups.
+          Final bookings will always be confirmed directly with you via email at
+          <strong>katethestitchwitch@gmail.com</strong>.
+        </p>
+      </div>
+
+      <div class="calendar-frame">
+        <!--
+          To show a calendar here, the easiest path is:
+          1. Create a separate Google Calendar for "Wickedly Stitched by Kate".
+          2. In its settings, under "Integrate calendar", copy the Embed code.
+          3. Replace the iframe below with that code.
+        -->
+
+        <!-- Example (replace src with your real calendar embed URL):
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+        -->
+
+        <span>
+          Calendar coming soon. Once you create a booking calendar and copy its embed code,
+          paste the iframe here to show your live availability.
+        </span>
+      </div>
+    </section>
+
+    <!-- About the Designer -->
+    <section id="about" class="calendar-section" style="margin-top: 3rem;">
+      <div class="calendar-header">
+        <h3>About the Designer</h3>
+        <p>
+          The story and skill behind the magic ✨
+        </p>
+      </div>
+
+      <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+        <p style="margin-bottom: 1rem;">
+          Katelyn “Kate the Stitch Witch” Law Sarver is the owner and designer behind Wickedly Stitched by Kate. 
+          A Franklin County native with over a decade of sewing experience, Kate creates custom gowns, cosplay, 
+          performance wear, corsetry, lingerie, and alterations that celebrate every body and every story.
+        </p>
+
+        <p style="margin-bottom: 1rem;">
+          Her passion for design began young, inspired by the confidence a well-crafted garment can unlock. After caring 
+          for family and honoring a promise to her late mother—her greatest supporter—Kate turned her dream into reality: 
+          a studio where fashion is stitched with a little magic.
+        </p>
+
+        <p>
+          As an award-winning cosplayer and professional seamstress with experience in both custom work and industrial 
+          production, Kate blends technical skill with bold creativity. Whether you’re stepping onto the stage, walking 
+          down the aisle, or transforming into a character you love—Kate ensures you feel powerful, seen, and spectacular.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Wickedly Stitched by Kate · Franklin County, VA<br>
+      Owner &amp; Designer — Katelyn "Kate the Stitch Witch" Law Sarver · Contact:
+      <a href="mailto:katethestitchwitch@gmail.com">katethestitchwitch@gmail.com</a>
+    </footer>
+  </main>
+
+  <script>
+    // Handle item selection -> save for email
+    const cards = document.querySelectorAll('.item-card');
+    const selectedNameEl = document.getElementById('selectedItemName');
+    let selectedDesign = '';
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const name = card.getAttribute('data-item-name');
+        const type = card.getAttribute('data-item-type');
+        const price = card.getAttribute('data-item-price');
+
+        const display = name + ' · ' + type + ' · ' + price;
+        selectedDesign = display;
+        selectedNameEl.textContent = display;
+
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    function resetSelection() {
+      selectedDesign = '';
+      selectedNameEl.textContent = 'None selected yet – tap a piece in the gallery or email about a new idea.';
+    }
+
+    function emailKateDirectly() {
+      const to = 'katethestitchwitch@gmail.com';
+      const subject = 'New Wickedly Stitched by Kate inquiry';
+
+      let body = 'Hi Kate,\n\n';
+
+      if (selectedDesign) {
+        body += 'I\'m interested in:\n' +
+                selectedDesign +
+                '\n\n';
+      } else {
+        body += 'I\'m interested in a custom piece and would love to talk details.\n\n';
+      }
+
+      body += 'Here are some details about my idea (you can edit this before sending):\n' +
+              '- Event/date:\n' +
+              '- Type of garment (gown, cosplay, performance wear, lingerie/corset, etc.):\n' +
+              '- Colors/fabrics:\n' +
+              '- Budget range:\n' +
+              '- Rush deadline? (over a month / under one month / under two weeks):\n\n' +
+              'Thank you!\n';
+
+      const mailtoLink =
+        'mailto:' + encodeURIComponent(to) +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailtoLink;
+    }
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
