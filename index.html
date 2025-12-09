@@ -462,6 +462,14 @@
       resize: vertical;
     }
 
+    /* Let the file input look nicer */
+    .form-field input[type="file"] {
+      padding: 0.3rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
@@ -639,7 +647,7 @@
             </p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
             <!-- FORMAL GOWNS -->
             <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem;">
               Formal Gowns
@@ -855,7 +863,8 @@
       <aside class="panel" id="order">
         <h3>Ready to talk details?</h3>
         <p>
-          Share your idea, event date, pick from the options below, and add any inspiration photos.
+          Share your idea, event date, pick from the options below, and upload any reference photos.
+          When you click email, you’ll be able to attach those same images in your mail app.
           Kate will follow up with questions, a timeline estimate, and a custom quote.
         </p>
 
@@ -903,7 +912,12 @@
         <div class="form-field">
           <label for="ideaDetails">Tell Kate about your idea</label>
           <textarea id="ideaDetails" placeholder="Character, colors, fabrics, vibes, or anything else you’d like to share."></textarea>
-          <small>You’ll be able to attach inspiration photos in your email app before sending.</small>
+        </div>
+
+        <div class="form-field">
+          <label for="refPhotos">Reference photos</label>
+          <input id="refPhotos" type="file" accept="image/*" multiple>
+          <small>Select any screenshots, inspo images, or photos here. Then attach these same files in the email window after it opens.</small>
         </div>
 
         <button type="button" class="button-primary" onclick="emailKateDirectly()">
@@ -914,13 +928,13 @@
           type="button"
           class="button-secondary"
           onclick="resetSelection()">
-          Clear selected design
+          Clear selected design & form
         </button>
 
         <p class="small-note">
           This will open your email app with a pre-filled message to 
           <a href="mailto:katethestitchwitch@gmail.com">katethestitchwitch@gmail.com</a>. 
-          You can edit everything and attach photos before sending.
+          You can edit everything and attach your reference photos before sending.
         </p>
       </aside>
     </section>
@@ -937,14 +951,7 @@
       </div>
 
       <div class="calendar-frame">
-        <!--
-          To show a calendar here, the easiest path is:
-          1. Create a separate Google Calendar for "Wickedly Stitched by Kate".
-          2. In its settings, under "Integrate calendar", copy the Embed code.
-          3. Replace the iframe below with that code.
-        -->
-
-        <!-- Example (replace src with your real calendar embed URL):
+        <!-- Example embed goes here when you’re ready:
         <iframe
           src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York"
           frameborder="0"
@@ -1024,6 +1031,10 @@
       document.getElementById('projectType').value = '';
       document.getElementById('timeline').value = '';
       document.getElementById('ideaDetails').value = '';
+      const refPhotos = document.getElementById('refPhotos');
+      if (refPhotos) {
+        refPhotos.value = '';
+      }
     }
 
     function emailKateDirectly() {
@@ -1062,7 +1073,7 @@
         body += '(You can describe your design idea here.)\n\n';
       }
 
-      body += 'Please attach any inspiration photos to this email before sending so Kate can see your vision.\n\n';
+      body += 'Please attach your reference photos / inspiration images to this email before sending so Kate can see your vision.\n\n';
       body += 'Thank you!\n';
 
       const mailtoLink =
