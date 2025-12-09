@@ -292,6 +292,39 @@
       color: var(--muted);
     }
 
+    /* Calendar / generic card sections */
+
+    .calendar-section {
+      margin-top: 2.25rem;
+      background:
+        radial-gradient(circle at top left, var(--amethyst-glow), transparent 60%),
+        linear-gradient(to bottom right, rgba(10, 19, 35, 0.98), rgba(3, 7, 18, 0.98));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(63, 55, 80, 0.98);
+      padding: 1.2rem 1.3rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .calendar-header h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .calendar-header p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 24rem;
+    }
+
     /* Gallery */
 
     .gallery-grid {
@@ -521,39 +554,6 @@
       margin-top: 0.6rem;
     }
 
-    /* Calendar / generic card sections */
-
-    .calendar-section {
-      margin-top: 2.25rem;
-      background:
-        radial-gradient(circle at top left, var(--amethyst-glow), transparent 60%),
-        linear-gradient(to bottom right, rgba(10, 19, 35, 0.98), rgba(3, 7, 18, 0.98));
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(63, 55, 80, 0.98);
-      padding: 1.2rem 1.3rem 1.4rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .calendar-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: baseline;
-      margin-bottom: 0.75rem;
-    }
-
-    .calendar-header h3 {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .calendar-header p {
-      font-size: 0.8rem;
-      color: var(--muted);
-      max-width: 24rem;
-    }
-
     .calendar-frame {
       margin-top: 0.75rem;
       border-radius: 12px;
@@ -606,8 +606,9 @@
 
   <main class="page">
     <section class="layout">
-      <!-- Left: Intro + Services + FAQ + Gallery -->
+      <!-- Left: Intro + About + Services + Gallery + FAQ -->
       <div>
+        <!-- Intro -->
         <section class="intro-card" id="top">
           <div class="intro-badge">
             <div class="intro-badge-dot"></div>
@@ -632,6 +633,36 @@
             <p class="intro-note">
               Tap a look in the gallery to pre-fill your inquiry, or email about a completely new design.
               Kate will follow up with pricing, timeline, and fitting details based on your idea and availability.
+            </p>
+          </div>
+        </section>
+
+        <!-- About the Designer (moved up) -->
+        <section id="about" class="calendar-section" style="margin-top: 2.5rem;">
+          <div class="calendar-header">
+            <h3>About the Designer</h3>
+            <p>
+              The story and skill behind the magic ✨
+            </p>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+            <p style="margin-bottom: 1rem;">
+              Katelyn “Kate the Stitch Witch” Law Sarver is the owner and designer behind Wickedly Stitched by Kate. 
+              A Franklin County native with over a decade of sewing experience, Kate creates custom gowns, cosplay, 
+              performance wear, corsetry, lingerie, and alterations that celebrate every body and every story.
+            </p>
+
+            <p style="margin-bottom: 1rem;">
+              Her passion for design began young, inspired by the confidence a well-crafted garment can unlock. After caring 
+              for family and honoring a promise to her late mother—her greatest supporter—Kate turned her dream into reality: 
+              a studio where fashion is stitched with a little magic.
+            </p>
+
+            <p>
+              As an award-winning cosplayer and professional seamstress with experience in both custom work and industrial 
+              production, Kate blends technical skill with bold creativity. Whether you’re stepping onto the stage, walking 
+              down the aisle, or transforming into a character you love—Kate ensures you feel powerful, seen, and spectacular.
             </p>
           </div>
         </section>
@@ -705,73 +736,7 @@
           </div>
         </section>
 
-        <!-- FAQ section -->
-        <section id="faq" class="calendar-section" style="margin-top: 2.5rem%;">
-          <div class="calendar-header">
-            <h3>FAQ &amp; Policies</h3>
-            <p>
-              A quick look at how custom work is booked, priced, and scheduled with Wickedly Stitched by Kate.
-            </p>
-          </div>
-
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
-              The remaining balance is due at or before pickup/final delivery.
-            </p>
-
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do rush orders work?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              If you need your piece on a tight timeline, rush pricing applies to labor so that late requests are
-              scheduled fairly and sustainably:
-            </p>
-            <ul style="margin-left: 1.1rem; margin-bottom: 0.9rem; font-size: 0.9rem;">
-              <li>
-                For all custom builds (formal gowns, cosplay, performance wear, lingerie and corsetry):
-                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
-                  <li>Deadlines <strong>under one month</strong> are billed at <strong>$60/hour</strong> for labor.</li>
-                  <li>Deadlines <strong>under two weeks</strong> are billed at <strong>$80/hour</strong> for labor.</li>
-                </ul>
-              </li>
-              <li style="margin-top: 0.5rem;">
-                For alterations:
-                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
-                  <li>Standard alteration work is <strong>$30/hour</strong>.</li>
-                  <li>Rush alterations with deadlines <strong>under one month</strong> are billed at <strong>$50/hour</strong>.</li>
-                  <li>Rush alterations with deadlines <strong>under two weeks</strong> are billed at <strong>$70/hour</strong>.</li>
-                </ul>
-              </li>
-            </ul>
-            <p style="margin-bottom: 0.9rem;">
-              Rush availability depends on Kate’s current workload. Materials and supplies are always charged separately from labor.
-            </p>
-
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How long does a formal gown take?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Most custom gowns require at least <strong>40 hours of labor</strong> plus time for sourcing materials and fittings. 
-              It’s best to reach out as early as possible, especially for weddings, formals, or major events.
-            </p>
-
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Where are fittings done? Do you ship?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Fittings are primarily available in the Franklin County, VA area. Some items—such as lingerie, certain cosplay 
-              elements, and select performance pieces—may be able to be shipped depending on the design and fit requirements. 
-              Full gowns and heavily structured garments typically require in-person fittings.
-            </p>
-
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do I get a quote?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Click <strong>Request a Piece</strong> to email directly about your project, or email 
-              <a href="mailto:katethestitchwitch@gmail.com" style="color: var(--accent-soft);">
-                katethestitchwitch@gmail.com
-              </a>. Share your idea, event date, and any inspiration photos. Kate will follow up with questions, a 
-              timeline estimate, and a custom quote.
-            </p>
-          </div>
-        </section>
-
-        <!-- Gallery (placeholder images for now) -->
+        <!-- Gallery -->
         <section id="gallery">
           <div class="section-header">
             <h3>Featured Pieces</h3>
@@ -854,6 +819,72 @@
                 <div class="item-cta">Use this as inspiration</div>
               </div>
             </article>
+          </div>
+        </section>
+
+        <!-- FAQ moved near bottom, above calendar -->
+        <section id="faq" class="calendar-section" style="margin-top: 2.5rem;">
+          <div class="calendar-header">
+            <h3>FAQ &amp; Policies</h3>
+            <p>
+              A quick look at how custom work is booked, priced, and scheduled with Wickedly Stitched by Kate.
+            </p>
+          </div>
+
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
+              The remaining balance is due at or before pickup/final delivery.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do rush orders work?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              If you need your piece on a tight timeline, rush pricing applies to labor so that late requests are
+              scheduled fairly and sustainably:
+            </p>
+            <ul style="margin-left: 1.1rem; margin-bottom: 0.9rem; font-size: 0.9rem;">
+              <li>
+                For all custom builds (formal gowns, cosplay, performance wear, lingerie and corsetry):
+                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
+                  <li>Deadlines <strong>under one month</strong> are billed at <strong>$60/hour</strong> for labor.</li>
+                  <li>Deadlines <strong>under two weeks</strong> are billed at <strong>$80/hour</strong> for labor.</li>
+                </ul>
+              </li>
+              <li style="margin-top: 0.5rem;">
+                For alterations:
+                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
+                  <li>Standard alteration work is <strong>$30/hour</strong>.</li>
+                  <li>Rush alterations with deadlines <strong>under one month</strong> are billed at <strong>$50/hour</strong>.</li>
+                  <li>Rush alterations with deadlines <strong>under two weeks</strong> are billed at <strong>$70/hour</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+            <p style="margin-bottom: 0.9rem;">
+              Rush availability depends on Kate’s current workload. Materials and supplies are always charged separately from labor.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How long does a formal gown take?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Most custom gowns require at least <strong>40 hours of labor</strong> plus time for sourcing materials and fittings. 
+              It’s best to reach out as early as possible, especially for weddings, formals, or major events.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Where are fittings done? Do you ship?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Fittings are primarily available in the Franklin County, VA area. Some items—such as lingerie, certain cosplay 
+              elements, and select performance pieces—may be able to be shipped depending on the design and fit requirements. 
+              Full gowns and heavily structured garments typically require in-person fittings.
+            </p>
+
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do I get a quote?</h4>
+            <p style="margin-bottom: 0.9rem;">
+              Click <strong>Request a Piece</strong> to email directly about your project, or email 
+              <a href="mailto:katethestitchwitch@gmail.com" style="color: var(--accent-soft);">
+                katethestitchwitch@gmail.com
+              </a>. Share your idea, event date, and any inspiration photos. Kate will follow up with questions, a 
+              timeline estimate, and a custom quote.
+            </p>
           </div>
         </section>
       </div>
@@ -964,36 +995,6 @@
           Calendar coming soon. Once you create a booking calendar and copy its embed code,
           paste the iframe here to show your live availability.
         </span>
-      </div>
-    </section>
-
-    <!-- About the Designer -->
-    <section id="about" class="calendar-section" style="margin-top: 3rem;">
-      <div class="calendar-header">
-        <h3>About the Designer</h3>
-        <p>
-          The story and skill behind the magic ✨
-        </p>
-      </div>
-
-      <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
-        <p style="margin-bottom: 1rem;">
-          Katelyn “Kate the Stitch Witch” Law Sarver is the owner and designer behind Wickedly Stitched by Kate. 
-          A Franklin County native with over a decade of sewing experience, Kate creates custom gowns, cosplay, 
-          performance wear, corsetry, lingerie, and alterations that celebrate every body and every story.
-        </p>
-
-        <p style="margin-bottom: 1rem;">
-          Her passion for design began young, inspired by the confidence a well-crafted garment can unlock. After caring 
-          for family and honoring a promise to her late mother—her greatest supporter—Kate turned her dream into reality: 
-          a studio where fashion is stitched with a little magic.
-        </p>
-
-        <p>
-          As an award-winning cosplayer and professional seamstress with experience in both custom work and industrial 
-          production, Kate blends technical skill with bold creativity. Whether you’re stepping onto the stage, walking 
-          down the aisle, or transforming into a character you love—Kate ensures you feel powerful, seen, and spectacular.
-        </p>
       </div>
     </section>
 
