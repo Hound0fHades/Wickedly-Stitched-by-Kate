@@ -8,31 +8,31 @@
 
   <style>
     :root {
-      /* Core Raven Queen + Emerald palette */
+      /* Core Raven Queen + Emerald + Sakura palette */
       --bg: #020204;              /* void black */
-      --bg-alt: #080712;          /* dark plum shadow */
-      --panel: #101223;           /* raven-feather panel */
-      --text: #f9fafb;
-      --muted: #a8a8c7;
-      --border: #3f3750;
+      --bg-alt: #070714;          /* dark raven shadow */
+      --panel: #0d101b;           /* raven-feather panel */
+      --text: #fdfcff;
+      --muted: #b3b3cf;
+      --border: #3f3650;
 
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.75);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.8);
 
       /* Sakura pink as soft highlight */
-      --accent: #f4b4d6;        /* sakura highlight */
-      --accent-soft: #fde6f5;
+      --accent: #f7b8da;          /* sakura highlight */
+      --accent-soft: #fde9f6;
 
-      /* Amethyst twilight glow */
-      --amethyst: #c4b5fd;
-      --amethyst-soft: #e5ddff;
-      --amethyst-glow: rgba(147, 51, 234, 0.35);
+      /* Amethyst twilight glow (soft, more subtle) */
+      --amethyst: #a78bfa;
+      --amethyst-soft: #e6ddff;
+      --amethyst-glow: rgba(167, 139, 250, 0.22);
 
       /* Emerald magic */
-      --emerald: #34d399;
+      --emerald: #22c794;
       --emerald-dark: #064e3b;
-      --emerald-glow: rgba(52, 211, 153, 0.6);
+      --emerald-glow: rgba(34, 199, 148, 0.6);
     }
 
     * {
@@ -45,7 +45,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
         radial-gradient(circle at top left, var(--amethyst-glow) 0, transparent 60%),
-        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.45), #020204 85%);
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.55), #020204 85%);
       color: var(--text);
       line-height: 1.5;
     }
@@ -81,7 +81,7 @@
       top: 0;
       z-index: 20;
       background:
-        linear-gradient(to right, rgba(2, 6, 23, 0.96), rgba(15, 23, 42, 0.92));
+        linear-gradient(to right, rgba(2, 6, 23, 0.96), rgba(6, 31, 25, 0.96));
     }
 
     .brand {
@@ -99,9 +99,9 @@
       align-items: center;
       justify-content: center;
       background:
-        radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.4), rgba(15, 23, 42, 0.98)),
+        radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.5), rgba(15, 23, 42, 0.98)),
         linear-gradient(to bottom, rgba(15, 23, 42, 0.95), #020309);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
       font-size: 1.25rem;
     }
 
@@ -138,14 +138,14 @@
     nav a:hover {
       border-color: rgba(148, 163, 184, 0.6);
       color: var(--text);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(10, 19, 35, 0.95);
     }
 
     nav a.primary {
-      border-color: rgba(52, 211, 153, 0.95);
+      border-color: rgba(34, 199, 148, 0.95);
       color: var(--text);
       background:
-        radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.24), rgba(6, 78, 59, 0.98));
+        radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
       box-shadow: 0 18px 50px var(--emerald-glow);
     }
 
@@ -169,11 +169,11 @@
 
     .intro-card {
       background:
-        linear-gradient(to bottom right, rgba(16, 18, 35, 0.98), rgba(3, 7, 18, 0.98)),
-        radial-gradient(circle at top right, rgba(52, 211, 153, 0.22), transparent 60%);
+        linear-gradient(to bottom right, rgba(14, 18, 35, 0.98), rgba(3, 7, 18, 0.98)),
+        radial-gradient(circle at top right, rgba(34, 199, 148, 0.25), transparent 60%);
       border-radius: var(--radius-lg);
       padding: 1.5rem 1.5rem 1.25rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(167, 139, 250, 0.45);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -184,9 +184,9 @@
       position: absolute;
       inset: -40px;
       background-image:
-        radial-gradient(circle at 10% 20%, rgba(196, 181, 253, 0.42) 0, transparent 45%),
-        radial-gradient(circle at 80% 10%, rgba(52, 211, 153, 0.3) 0, transparent 50%);
-      opacity: 0.45;
+        radial-gradient(circle at 10% 20%, rgba(167, 139, 250, 0.35) 0, transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(34, 199, 148, 0.3) 0, transparent 50%);
+      opacity: 0.5;
       pointer-events: none;
     }
 
@@ -199,7 +199,7 @@
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--muted);
-      background: rgba(17, 24, 39, 0.9);
+      background: rgba(9, 13, 28, 0.95);
       backdrop-filter: blur(10px);
       margin-bottom: 0.75rem;
       position: relative;
@@ -250,7 +250,7 @@
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(9, 13, 28, 0.95);
     }
 
     .intro-footer {
@@ -301,11 +301,11 @@
     }
 
     .item-card {
-      background: rgba(15, 23, 42, 0.97);
+      background: rgba(9, 13, 28, 0.97);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(63, 55, 80, 0.85);
+      border: 1px solid rgba(63, 55, 80, 0.9);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
       cursor: pointer;
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
       position: relative;
@@ -313,8 +313,8 @@
 
     .item-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(52, 211, 153, 0.95);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9);
+      border-color: rgba(34, 199, 148, 0.95);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 1);
     }
 
     .item-image {
@@ -337,7 +337,7 @@
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
       font-size: 0.7rem;
-      background: rgba(2, 6, 23, 0.96);
+      background: rgba(2, 6, 23, 0.98);
       color: var(--amethyst-soft);
       border: 1px solid var(--amethyst);
       text-transform: uppercase;
@@ -379,9 +379,9 @@
 
     .panel {
       background:
-        radial-gradient(circle at top, rgba(6, 78, 59, 0.96), rgba(3, 7, 18, 0.98));
+        radial-gradient(circle at top, rgba(6, 78, 59, 0.98), rgba(3, 7, 18, 0.98));
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(63, 55, 80, 0.95);
+      border: 1px solid rgba(63, 55, 80, 0.98);
       padding: 1.2rem 1.1rem;
       box-shadow: var(--shadow-soft);
       position: sticky;
@@ -404,7 +404,7 @@
     .selected-item {
       background: #020617;
       border-radius: var(--radius-md);
-      border: 1px solid rgba(99, 102, 241, 0.8);
+      border: 1px solid rgba(129, 140, 248, 0.9);
       padding: 0.6rem 0.7rem;
       margin-bottom: 0.9rem;
       font-size: 0.8rem;
@@ -449,7 +449,7 @@
       width: 100%;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(9, 13, 28, 0.98);
       color: var(--text);
       padding: 0.4rem 0.7rem;
       font-size: 0.8rem;
@@ -462,27 +462,26 @@
       resize: vertical;
     }
 
-    /* Let the file input look nicer */
     .form-field input[type="file"] {
       padding: 0.3rem 0.4rem;
       border-radius: 999px;
       font-size: 0.75rem;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(9, 13, 28, 0.98);
     }
 
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
-      border-color: rgba(52, 211, 153, 0.9);
-      box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.4);
+      border-color: rgba(34, 199, 148, 0.9);
+      box-shadow: 0 0 0 1px rgba(34, 199, 148, 0.4);
     }
 
     .button-primary {
       border-radius: 999px;
-      border: 1px solid rgba(52, 211, 153, 0.95);
+      border: 1px solid rgba(34, 199, 148, 0.95);
       padding: 0.55rem 0.9rem;
       background:
-        radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.24), rgba(6, 78, 59, 0.98));
+        radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
       color: var(--text);
       font-size: 0.82rem;
       text-transform: uppercase;
@@ -503,9 +502,9 @@
 
     .button-secondary {
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.85);
       padding: 0.45rem 0.8rem;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(9, 13, 28, 0.98);
       color: var(--muted);
       font-size: 0.76rem;
       text-transform: uppercase;
@@ -530,7 +529,7 @@
         radial-gradient(circle at top left, var(--amethyst-glow), transparent 60%),
         linear-gradient(to bottom right, rgba(10, 19, 35, 0.98), rgba(3, 7, 18, 0.98));
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(63, 55, 80, 0.95);
+      border: 1px solid rgba(63, 55, 80, 0.98);
       padding: 1.2rem 1.3rem 1.4rem;
       box-shadow: var(--shadow-soft);
     }
@@ -559,7 +558,7 @@
       margin-top: 0.75rem;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(75, 85, 99, 0.95);
+      border: 1px solid rgba(75, 85, 99, 0.98);
       background: #020617;
       min-height: 420px;
       display: flex;
@@ -715,7 +714,7 @@
             </p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
             <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
             <p style="margin-bottom: 0.9rem;">
               Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
