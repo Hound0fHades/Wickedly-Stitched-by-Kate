@@ -292,17 +292,6 @@
       color: var(--muted);
     }
 
-    /* Raven footprint trail under most section headers */
-    .section-header::after,
-    .calendar-section:not(.about-section) .calendar-header::after {
-      content: "⋔   ⋔   ⋔";
-      display: block;
-      margin-top: 0.4rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.4em;
-      color: rgba(163, 163, 199, 0.55); /* soft muted lavender */
-    }
-
     /* Calendar / generic card sections */
 
     .calendar-section {
@@ -336,7 +325,20 @@
       max-width: 24rem;
     }
 
-    /* Sakura Highlight + small, subtle Petals for About Section */
+    /* SVG raven footprint trail under most section headers (except About) */
+    .section-header::after,
+    .calendar-section:not(.about-section) .calendar-header::after {
+      content: "";
+      display: block;
+      margin-top: 0.5rem;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='12' viewBox='0 0 60 12'%3E%3Cg fill='none' stroke='%23a3a3c7' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M4 10 L2 6 M4 10 L4 5 M4 10 L6 6'/%3E%3Cpath d='M30 10 L28 6 M30 10 L30 5 M30 10 L32 6'/%3E%3Cpath d='M56 10 L54 6 M56 10 L56 5 M56 10 L58 6'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left center;
+      opacity: 0.75;
+    }
+
+    /* Sakura Highlight + smaller, subtle petals for About Section */
     .about-section {
       position: relative;
       overflow: hidden;
@@ -352,19 +354,19 @@
       z-index: 1;
     }
 
-    /* floating sakura petals (small, subtle, smooth) */
+    /* Smaller, smoother sakura petals */
     .about-section::before {
       content: "";
       position: absolute;
-      inset: -30%;
+      inset: -25%;
       pointer-events: none;
-      opacity: 0.22;
+      opacity: 0.18;
       background-image:
-        radial-gradient(ellipse at top,   rgba(244, 180, 214, 0.7) 0, transparent 60%),
-        radial-gradient(ellipse at center,rgba(244, 180, 214, 0.55) 0, transparent 65%),
-        radial-gradient(ellipse at bottom,rgba(244, 180, 214, 0.45) 0, transparent 68%);
-      background-size: 16% 16%, 13% 13%, 11% 11%;
-      background-position: 8% -5%, 55% 8%, 92% 36%;
+        radial-gradient(ellipse at top,    rgba(244, 180, 214, 0.7) 0, transparent 40%),
+        radial-gradient(ellipse at center, rgba(244, 180, 214, 0.55) 0, transparent 45%),
+        radial-gradient(ellipse at bottom, rgba(244, 180, 214, 0.45) 0, transparent 50%);
+      background-size: 10% 10%, 8% 8%, 6% 6%;
+      background-position: 12% -6%, 50% 8%, 86% 30%;
       animation: sakuraPetals 28s linear infinite;
     }
 
@@ -381,20 +383,20 @@
       color: var(--accent-soft);
     }
 
-    /* Remove raven prints from About header (we want it pure Sakura) */
+    /* Remove raven prints from About header */
     .about-section .calendar-header::after {
       content: none;
     }
 
     @keyframes sakuraPetals {
       0% {
-        transform: translate3d(0, -8px, 0) rotate(0deg);
+        transform: translate3d(0, -6px, 0) rotate(0deg);
       }
       50% {
-        transform: translate3d(-10px, 10px, 0) rotate(3deg);
+        transform: translate3d(-8px, 8px, 0) rotate(3deg);
       }
       100% {
-        transform: translate3d(-20px, 20px, 0) rotate(6deg);
+        transform: translate3d(-16px, 16px, 0) rotate(6deg);
       }
     }
 
@@ -710,7 +712,7 @@
           </div>
         </section>
 
-        <!-- About the Designer (sakura pink + subtle petals) -->
+        <!-- About the Designer -->
         <section id="about" class="calendar-section about-section" style="margin-top: 2.5rem;">
           <div class="calendar-header">
             <h3>About the Designer</h3>
@@ -895,7 +897,7 @@
           </div>
         </section>
 
-        <!-- FAQ near bottom, above calendar -->
+        <!-- FAQ -->
         <section id="faq" class="calendar-section" style="margin-top: 2.5rem;">
           <div class="calendar-header">
             <h3>FAQ &amp; Policies</h3>
@@ -904,7 +906,7 @@
             </p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
             <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
             <p style="margin-bottom: 0.9rem;">
               Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
