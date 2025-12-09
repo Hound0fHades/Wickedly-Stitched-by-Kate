@@ -8,27 +8,23 @@
 
   <style>
     :root {
-      /* Base raven-night vibe */
-      --bg: #020308;           /* inky void */
-      --bg-alt: #05030c;       /* deeper panels */
-      --panel: #0b0913;        /* shadowed plum */
+      --bg: #050409;           /* inky night */
+      --bg-alt: #0b0910;       /* deeper panels */
+      --panel: #15121c;        /* gothic plum */
+      --accent: #f4b4d6;       /* sakura pink */
+      --accent-soft: #fce7f3;  /* pale blossom */
+      --accent-dark: #111827;  /* crow charcoal */
       --text: #f9fafb;
-      --muted: #a5a6c7;
-      --border: #3a324c;
-
+      --muted: #a3a3b5;
+      --border: #383349;
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.75);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
 
-      /* Raven Queen accents */
-      --accent: #c4b5fd;       /* soft amethyst */
-      --accent-soft: #e5ddff;  /* pale lilac */
-      --accent-dark: #020617;  /* raven feather */
-
-      /* Emerald magic */
-      --emerald: #22c55e;
-      --emerald-dark: #052e16;
-      --emerald-glow: rgba(34, 197, 94, 0.55);
+      /* Emerald theme */
+      --emerald: #34d399;
+      --emerald-dark: #064e3b;
+      --emerald-glow: rgba(52, 211, 153, 0.55);
     }
 
     * {
@@ -40,8 +36,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(76, 29, 149, 0.28), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.9), #02010a 85%);
+        radial-gradient(circle at top left, rgba(244, 180, 214, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(6, 78, 59, 0.6), #02010a 85%);
       color: var(--text);
       line-height: 1.5;
     }
@@ -76,7 +72,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: linear-gradient(to right, rgba(2, 6, 23, 0.96), rgba(15, 23, 42, 0.9));
+      background: linear-gradient(to right, rgba(5, 4, 9, 0.95), rgba(15, 23, 42, 0.85));
     }
 
     .brand {
@@ -89,14 +85,14 @@
       width: 44px;
       height: 44px;
       border-radius: 999px;
-      border: 1px solid rgba(229, 221, 255, 0.9);
+      border: 1px solid rgba(252, 231, 243, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       background:
-        radial-gradient(circle at 30% 0%, rgba(196, 181, 253, 0.4), rgba(15, 23, 42, 0.96)),
-        linear-gradient(to bottom, rgba(17, 24, 39, 0.95), #020308);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+        radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.4), rgba(15, 23, 42, 0.95)),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.8), #020309);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
       font-size: 1.25rem;
     }
 
@@ -131,16 +127,15 @@
     }
 
     nav a:hover {
-      border-color: rgba(148, 163, 184, 0.6);
+      border-color: rgba(148, 163, 184, 0.5);
       color: var(--text);
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.65);
     }
 
     nav a.primary {
-      border-color: rgba(34, 197, 94, 0.9);
+      border-color: rgba(52, 211, 153, 0.9);
       color: var(--text);
-      background:
-        radial-gradient(circle at 30% 0%, rgba(34, 197, 94, 0.22), rgba(15, 23, 42, 1));
+      background: radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.25), rgba(6, 78, 59, 0.95));
       box-shadow: 0 18px 40px var(--emerald-glow);
     }
 
@@ -164,11 +159,11 @@
 
     .intro-card {
       background:
-        linear-gradient(to bottom right, rgba(11, 9, 19, 0.98), rgba(2, 6, 23, 0.98)),
-        radial-gradient(circle at top right, rgba(76, 29, 149, 0.35), transparent 60%);
+        linear-gradient(to bottom right, rgba(21, 18, 28, 0.96), rgba(5, 4, 9, 0.98)),
+        radial-gradient(circle at top right, rgba(52, 211, 153, 0.22), transparent 60%);
       border-radius: var(--radius-lg);
       padding: 1.5rem 1.5rem 1.25rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(252, 231, 243, 0.35);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -179,9 +174,9 @@
       position: absolute;
       inset: -40px;
       background-image:
-        radial-gradient(circle at 10% 20%, rgba(196, 181, 253, 0.5) 0, transparent 45%),
-        radial-gradient(circle at 80% 10%, rgba(34, 197, 94, 0.28) 0, transparent 50%);
-      opacity: 0.4;
+        radial-gradient(circle at 10% 20%, rgba(52, 211, 153, 0.45) 0, transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(52, 211, 153, 0.3) 0, transparent 50%);
+      opacity: 0.35;
       pointer-events: none;
     }
 
@@ -192,9 +187,9 @@
       font-size: 0.75rem;
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(10px);
       margin-bottom: 0.75rem;
       position: relative;
@@ -244,8 +239,8 @@
     .pill {
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
     }
 
     .intro-footer {
@@ -296,11 +291,11 @@
     }
 
     .item-card {
-      background: rgba(15, 23, 42, 0.97);
+      background: rgba(15, 23, 42, 0.95);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(55, 65, 81, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
       cursor: pointer;
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
       position: relative;
@@ -308,8 +303,8 @@
 
     .item-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85);
-      border-color: rgba(196, 181, 253, 0.95);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      border-color: rgba(52, 211, 153, 0.85);
     }
 
     .item-image {
@@ -332,9 +327,9 @@
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
       font-size: 0.7rem;
-      background: rgba(2, 6, 23, 0.95);
+      background: rgba(5, 4, 9, 0.9);
       color: var(--accent-soft);
-      border: 1px solid rgba(196, 181, 253, 0.95);
+      border: 1px solid rgba(52, 211, 153, 0.9);
       text-transform: uppercase;
       letter-spacing: 0.16em;
     }
@@ -374,9 +369,9 @@
 
     .panel {
       background:
-        radial-gradient(circle at top, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+        radial-gradient(circle at top, rgba(6, 78, 59, 0.98), rgba(5, 4, 9, 0.96));
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(55, 65, 81, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       padding: 1.2rem 1.1rem;
       box-shadow: var(--shadow-soft);
       position: sticky;
@@ -399,7 +394,7 @@
     .selected-item {
       background: var(--accent-dark);
       border-radius: var(--radius-md);
-      border: 1px solid rgba(75, 85, 99, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       padding: 0.6rem 0.7rem;
       margin-bottom: 0.9rem;
       font-size: 0.8rem;
@@ -420,31 +415,30 @@
 
     .button-primary {
       border-radius: 999px;
-      border: 1px solid rgba(34, 197, 94, 0.95);
+      border: 1px solid rgba(52, 211, 153, 0.9);
       padding: 0.55rem 0.9rem;
-      background:
-        radial-gradient(circle at 30% 0%, rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.98));
+      background: radial-gradient(circle at 30% 0%, rgba(52, 211, 153, 0.25), rgba(6, 78, 59, 0.95));
       color: var(--text);
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       cursor: pointer;
       margin-top: 0.3rem;
-      box-shadow: 0 18px 45px var(--emerald-glow);
+      box-shadow: 0 14px 35px var(--emerald-glow);
       width: 100%;
       text-align: center;
     }
 
     .button-primary:hover {
-      filter: brightness(1.06);
+      filter: brightness(1.05);
       transform: translateY(-1px);
     }
 
     .button-secondary {
       border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       padding: 0.45rem 0.8rem;
-      background: rgba(15, 23, 42, 0.96);
+      background: rgba(15, 23, 42, 0.9);
       color: var(--muted);
       font-size: 0.76rem;
       text-transform: uppercase;
@@ -465,11 +459,9 @@
 
     .calendar-section {
       margin-top: 2.25rem;
-      background:
-        radial-gradient(circle at top left, rgba(76, 29, 149, 0.4), transparent 55%),
-        linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), rgba(17, 24, 39, 0.96));
+      background: linear-gradient(to bottom right, rgba(6, 78, 59, 0.95), rgba(6, 95, 70, 0.85));
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(75, 85, 99, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       padding: 1.2rem 1.3rem 1.4rem;
       box-shadow: var(--shadow-soft);
     }
@@ -498,7 +490,7 @@
       margin-top: 0.75rem;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(75, 85, 99, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.8);
       background: #020617;
       min-height: 420px;
       display: flex;
@@ -586,7 +578,7 @@
             </p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6%;">
+          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
             <!-- FORMAL GOWNS -->
             <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem;">
               Formal Gowns
