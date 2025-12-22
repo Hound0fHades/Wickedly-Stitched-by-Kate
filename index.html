@@ -7,11 +7,14 @@
   <meta name="description" content="Wickedly Stitched by Kate – fashion stitched with a little magic. Custom gowns, cosplay, performance wear, lingerie, and corsetry by owner & designer Katelyn &quot;Kate the Stitch Witch&quot; Law Sarver." />
 
   <style>
+    /* Optional: a more fashion/editorial type feel */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
     :root {
-      /* Core Raven Queen + Emerald + Sakura palette */
-      --bg: #020204;              /* void black */
-      --bg-alt: #070714;          /* dark raven shadow */
-      --panel: #0d101b;           /* raven-feather panel */
+      /* Raven Queen + Emerald + Sakura palette */
+      --bg: #020204;
+      --bg-alt: #070714;
+      --panel: #0d101b;
       --text: #fdfcff;
       --muted: #b3b3cf;
       --border: #3f3650;
@@ -20,111 +23,110 @@
       --radius-md: 12px;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.8);
 
-      /* Sakura pink as soft highlight */
-      --accent: #f7b8da;          /* sakura highlight */
+      --accent: #f7b8da;          /* sakura */
       --accent-soft: #fde9f6;
 
-      /* Amethyst twilight glow (soft, more subtle) */
       --amethyst: #a78bfa;
       --amethyst-soft: #e6ddff;
       --amethyst-glow: rgba(167, 139, 250, 0.22);
 
-      /* Emerald magic */
       --emerald: #22c794;
       --emerald-dark: #064e3b;
       --emerald-glow: rgba(34, 199, 148, 0.6);
+
+      --glass: rgba(9, 13, 28, 0.72);
+      --glass-strong: rgba(9, 13, 28, 0.92);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, var(--amethyst-glow) 0, transparent 60%),
-        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.55), #020204 85%);
+        radial-gradient(circle at 16% 12%, var(--amethyst-glow) 0, transparent 55%),
+        radial-gradient(circle at 85% 85%, rgba(34, 197, 94, 0.55), #020204 70%);
       color: var(--text);
       line-height: 1.5;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .page {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
+      padding: 1.25rem 1.15rem 3rem;
     }
 
     /* Header */
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      padding: 1rem 1.25rem;
-      margin: 0 -1.25rem 1rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 0.95rem 1.15rem;
+      margin: 0 -1.15rem 1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
       backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 20;
-      background:
-        linear-gradient(to right, rgba(2, 6, 23, 0.96), rgba(6, 31, 25, 0.96));
+      background: linear-gradient(to right, rgba(2, 6, 23, 0.95), rgba(6, 31, 25, 0.95));
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.85rem;
+      min-width: 0;
     }
 
     .brand-icon {
       width: 44px;
       height: 44px;
       border-radius: 999px;
-      border: 1px solid rgba(229, 221, 255, 0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid rgba(229, 221, 255, 0.85);
+      display: grid;
+      place-items: center;
       background:
         radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.5), rgba(15, 23, 42, 0.98)),
         linear-gradient(to bottom, rgba(15, 23, 42, 0.95), #020309);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      flex: 0 0 auto;
     }
 
+    .brand-text { min-width: 0; }
     .brand-text h1 {
-      font-size: 1.25rem;
-      letter-spacing: 0.06em;
+      font-family: "Playfair Display", serif;
+      font-size: 1.22rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .brand-text span {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--muted);
       letter-spacing: 0.10em;
       text-transform: uppercase;
+      margin-top: 0.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     nav {
       display: flex;
-      gap: 0.75rem;
-      font-size: 0.85rem;
+      gap: 0.65rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
@@ -138,370 +140,474 @@
     nav a:hover {
       border-color: rgba(148, 163, 184, 0.6);
       color: var(--text);
-      background: rgba(10, 19, 35, 0.95);
+      background: rgba(10, 19, 35, 0.85);
     }
 
     nav a.primary {
       border-color: rgba(34, 199, 148, 0.95);
       color: var(--text);
-      background:
-        radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
+      background: radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
       box-shadow: 0 18px 50px var(--emerald-glow);
     }
 
-    /* Layout main */
-
+    /* Fashion layout: Hero + Sticky panel */
     .layout {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      gap: 1.75rem;
-      margin-top: 1.5rem;
-      align-items: flex-start;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+      align-items: start;
     }
 
-    @media (max-width: 900px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
     }
 
-    /* Hero / intro */
-
-    .intro-card {
+    /* Editorial hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 1.1rem;
+      padding: 1.35rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(167, 139, 250, 0.45);
       background:
         linear-gradient(to bottom right, rgba(14, 18, 35, 0.98), rgba(3, 7, 18, 0.98)),
-        radial-gradient(circle at top right, rgba(34, 199, 148, 0.25), transparent 60%);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem 1.5rem 1.25rem;
-      border: 1px solid rgba(167, 139, 250, 0.45);
+        radial-gradient(circle at top right, rgba(34, 199, 148, 0.26), transparent 60%);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
     }
 
-    .intro-card::before {
+    .hero::before {
       content: "";
       position: absolute;
       inset: -40px;
       background-image:
         radial-gradient(circle at 10% 20%, rgba(167, 139, 250, 0.35) 0, transparent 45%),
         radial-gradient(circle at 80% 10%, rgba(34, 199, 148, 0.3) 0, transparent 50%);
-      opacity: 0.5;
+      opacity: 0.55;
       pointer-events: none;
     }
 
-    .intro-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: var(--muted);
-      background: rgba(9, 13, 28, 0.95);
-      backdrop-filter: blur(10px);
-      margin-bottom: 0.75rem;
-      position: relative;
-      z-index: 1;
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
     }
 
-    .intro-badge-dot {
-      width: 8px;
-      height: 8px;
+    .hero-left, .hero-right { position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      padding: 0.28rem 0.65rem;
       border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      color: var(--muted);
+      background: rgba(9, 13, 28, 0.9);
+      margin-bottom: 0.9rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px; border-radius: 999px;
       background: var(--emerald);
       box-shadow: 0 0 12px var(--emerald-glow);
     }
 
-    .intro-card h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.04em;
-      position: relative;
-      z-index: 1;
+    .hero h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
     }
 
-    .intro-card h2 span {
-      color: var(--accent);
-    }
+    .hero h2 span { color: var(--accent); }
 
-    .intro-subtitle {
-      font-size: 0.95rem;
+    .hero-sub {
       color: var(--muted);
-      max-width: 35rem;
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.98rem;
+      max-width: 46ch;
+      margin-bottom: 1rem;
     }
 
-    .intro-list {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
+      gap: 0.55rem;
+      margin-top: 0.2rem;
     }
 
     .pill {
-      padding: 0.25rem 0.7rem;
+      padding: 0.28rem 0.75rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(9, 13, 28, 0.95);
-    }
-
-    .intro-footer {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .intro-note {
-      font-size: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(9, 13, 28, 0.92);
       color: var(--muted);
-      max-width: 20rem;
+      font-size: 0.75rem;
     }
 
-    /* Section header */
+    /* Lookbook panel (fashion “spread”) */
+    .lookbook {
+      border-radius: 16px;
+      border: 1px solid rgba(63, 55, 80, 0.95);
+      background: rgba(9, 13, 28, 0.82);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.75);
+    }
 
-    .section-header {
+    .lookbook-top {
+      padding: 0.9rem 0.95rem 0.8rem;
       display: flex;
-      justify-content: space-between;
       align-items: baseline;
-      gap: 1rem;
-      margin-top: 1.75rem;
-      margin-bottom: 0.75rem;
+      justify-content: space-between;
+      gap: 0.8rem;
+      border-bottom: 1px solid rgba(148,163,184,0.18);
     }
 
-    .section-header h3 {
-      font-size: 1.05rem;
-      letter-spacing: 0.18em;
+    .lookbook-top h3 {
+      font-size: 0.85rem;
       text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--amethyst-soft);
     }
 
-    .section-header p {
-      font-size: 0.8rem;
+    .lookbook-top span {
+      font-size: 0.75rem;
       color: var(--muted);
     }
 
-    /* Calendar / generic card sections */
+    .lookbook-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 120px;
+      gap: 10px;
+      padding: 10px;
+    }
 
-    .calendar-section {
-      margin-top: 2.25rem;
+    .shot {
+      border-radius: 14px;
+      border: 1px solid rgba(63,55,80,0.7);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(247,184,218,0.18), transparent 55%),
+        radial-gradient(circle at 70% 80%, rgba(34,199,148,0.18), transparent 55%),
+        linear-gradient(to bottom right, rgba(255,255,255,0.04), rgba(0,0,0,0.35));
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* Faux “editorial” overlay lines */
+    .shot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.55)),
+        radial-gradient(circle at top left, rgba(167,139,250,0.22), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .shot.feature { grid-column: 1 / -1; grid-row: span 2; }
+
+    .shot-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      z-index: 1;
+      display: inline-flex;
+      gap: 0.45rem;
+      align-items: center;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34,199,148,0.5);
+      background: rgba(2,6,23,0.85);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-soft);
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 1.45rem;
+      padding: 1.2rem 1.25rem 1.3rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(63, 55, 80, 0.98);
       background:
         radial-gradient(circle at top left, var(--amethyst-glow), transparent 60%),
         linear-gradient(to bottom right, rgba(10, 19, 35, 0.98), rgba(3, 7, 18, 0.98));
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(63, 55, 80, 0.98);
-      padding: 1.2rem 1.3rem 1.4rem;
       box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    .calendar-header {
+    .section-head {
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
       align-items: baseline;
-      margin-bottom: 0.75rem;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
     }
 
-    .calendar-header h3 {
-      font-size: 0.95rem;
+    .section-head h3 {
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
     }
 
-    .calendar-header p {
+    .section-head p {
       font-size: 0.8rem;
       color: var(--muted);
-      max-width: 24rem;
+      max-width: 28rem;
     }
 
-    /* Raven footprints under headers (everywhere except About) */
-    .section-header::after,
-    .calendar-section:not(.about-section) .calendar-header::after {
+    /* Raven footprints under headers */
+    .section-head::after {
       content: "";
       display: block;
-      margin-top: 0.5rem;
+      margin-top: 0.55rem;
       height: 12px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='12' viewBox='0 0 60 12'%3E%3Cg fill='none' stroke='%23a3a3c7' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M4 10 L2 6 M4 10 L4 5 M4 10 L6 6'/%3E%3Cpath d='M30 10 L28 6 M30 10 L30 5 M30 10 L32 6'/%3E%3Cpath d='M56 10 L54 6 M56 10 L56 5 M56 10 L58 6'/%3E%3C/g%3E%3C/svg%3E");
+      width: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='12' viewBox='0 0 80 12'%3E%3Cg fill='none' stroke='%23b3b3cf' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M8 10 L6 6 M8 10 L8 5 M8 10 L10 6'/%3E%3Cpath d='M40 10 L38 6 M40 10 L40 5 M40 10 L42 6'/%3E%3Cpath d='M72 10 L70 6 M72 10 L72 5 M72 10 L74 6'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: left center;
       opacity: 0.75;
     }
 
-    /* Sakura Highlight + petals for About Section */
-    .about-section {
-      position: relative;
-      overflow: hidden;
+    /* About section: Sakura editorial */
+    .about {
+      border-color: rgba(247, 184, 218, 0.85);
       background:
-        radial-gradient(circle at top left, rgba(244, 180, 214, 0.45), transparent 60%),
+        radial-gradient(circle at top left, rgba(247,184,218,0.40), transparent 60%),
         linear-gradient(to bottom right, rgba(40, 16, 38, 0.98), rgba(24, 10, 24, 0.98));
-      border-color: rgba(244, 180, 214, 0.85);
-      box-shadow: 0 18px 50px rgba(244, 180, 214, 0.25);
+      box-shadow: 0 18px 50px rgba(247, 184, 218, 0.22);
     }
 
-    .about-section > * {
-      position: relative;
-      z-index: 1;
+    .about .section-head h3 {
+      color: var(--accent);
+      text-shadow: 0 0 6px rgba(247,184,218,0.45);
     }
+    .about .section-head p { color: var(--accent-soft); }
+    .about p { color: var(--accent-soft); }
+    .about .section-head::after { content: none; }
 
-    /* Tweaked: lighter, more spread-out wind-blown petals */
-    .about-section::before {
+    /* Small crisp “wind blown” petals (not blurry) */
+    .about::before {
       content: "";
       position: absolute;
       inset: -10px;
       pointer-events: none;
-      opacity: 0.3;
+      opacity: 0.25;
       background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='90'%3E%3Cg fill='none' stroke='%23f4b4d6' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 20c2.4 1.6 3.4 3.8 2.6 6.2-2.4-.8-4.6-1.6-6.2-3.8C15.2 21 16.6 20.2 18 20z'/%3E%3Cpath d='M52 10c2.2 1.5 3.2 3.6 2.5 5.9-2.3-.8-4.4-1.6-5.9-3.7.9-1.7 2.2-2.5 3.4-2.2z'/%3E%3Cpath d='M88 26c2.3 1.6 3.3 3.8 2.6 6.1-2.4-.8-4.5-1.7-6.2-3.8 1-1.8 2.3-2.7 3.6-2.3z'/%3E%3Cpath d='M32 48c2 1.4 2.9 3.3 2.2 5.4-2.1-.7-3.9-1.5-5.4-3.2.9-1.6 1.9-2.4 3.2-2.2z'/%3E%3Cpath d='M70 58c2.1 1.5 3 3.5 2.3 5.7-2.2-.7-4.1-1.6-5.7-3.4 1-1.6 2.1-2.4 3.4-2.3z'/%3E%3C/g%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='190' height='120'%3E%3Cg fill='none' stroke='%23f9c1de' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M26 18c2.2 1.5 3.1 3.4 2.3 5.6-2.1-.7-3.9-1.4-5.5-3.2.9-1.7 2-2.5 3.2-2.4z'/%3E%3Cpath d='M60 30c2.3 1.5 3.3 3.7 2.5 6-2.3-.8-4.3-1.7-6-3.6 1-1.8 2.2-2.7 3.5-2.4z'/%3E%3Cpath d='M96 44c2.1 1.4 3 3.3 2.3 5.5-2.1-.7-4-1.5-5.6-3.3.9-1.6 2-2.4 3.3-2.2z'/%3E%3Cpath d='M44 60c2 1.3 2.8 3.1 2.1 5.1-2-.7-3.7-1.4-5.1-3 1-1.5 1.9-2.3 3-2.1z'/%3E%3C/g%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='140'%3E%3Cg fill='none' stroke='%23f7b8da' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 25c2.2 1.5 3 3.4 2.2 5.6-2.1-.7-3.9-1.5-5.5-3.3.9-1.7 2-2.5 3.3-2.3z'/%3E%3Cpath d='M88 18c2.1 1.4 2.9 3.3 2.1 5.4-2-.7-3.7-1.4-5.2-3.1.9-1.6 1.9-2.4 3.1-2.3z'/%3E%3Cpath d='M148 34c2.3 1.6 3.2 3.8 2.4 6.1-2.3-.8-4.3-1.7-6-3.7 1-1.8 2.2-2.7 3.6-2.4z'/%3E%3Cpath d='M66 64c2 1.3 2.8 3.1 2.1 5.1-2-.7-3.7-1.4-5.1-3 1-1.5 1.9-2.3 3-2.1z'/%3E%3Cpath d='M120 84c2.2 1.5 3 3.5 2.3 5.7-2.2-.7-4.1-1.6-5.7-3.4 1-1.6 2.1-2.4 3.4-2.3z'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: repeat;
-      background-size: 220px 150px, 260px 180px;
-      background-position: -60px -20px, 80px 40px;
+      background-size: 320px 220px;
+      background-position: -70px -30px;
     }
 
-    .about-section .calendar-header h3 {
-      color: var(--accent);
-      text-shadow: 0 0 6px rgba(244, 180, 214, 0.5);
-    }
-
-    .about-section .calendar-header p {
-      color: var(--accent-soft);
-    }
-
-    .about-section p {
-      color: var(--accent-soft);
-    }
-
-    /* Remove raven prints from About header */
-    .about-section .calendar-header::after {
-      content: none;
-    }
-
-    /* Gallery */
-
-    .gallery-grid {
+    /* Services as fashion cards */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0.9rem;
+      margin-top: 0.25rem;
     }
 
-    .item-card {
-      background: rgba(9, 13, 28, 0.97);
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(63, 55, 80, 0.9);
+    .svc {
+      grid-column: span 6;
+      border-radius: 16px;
+      border: 1px solid rgba(63,55,80,0.9);
+      background: rgba(9, 13, 28, 0.85);
+      padding: 1rem;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.6);
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .svc::before {
+      content: "";
+      position: absolute;
+      inset: -30px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(34,199,148,0.18), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(247,184,218,0.14), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .svc > * { position: relative; z-index: 1; }
+
+    .svc h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .svc .rate {
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .svc ul {
+      margin-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .svc li { margin: 0.25rem 0; }
+
+    .svc .note {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .svc.wide { grid-column: span 12; }
+
+    @media (max-width: 820px) {
+      .svc { grid-column: span 12; }
+    }
+
+    /* Lookbook gallery = editorial tiles */
+    .lookbook-tiles {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .tile {
+      grid-column: span 4;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(63,55,80,0.9);
+      background: rgba(9,13,28,0.88);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.75);
       cursor: pointer;
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
       position: relative;
     }
 
-    .item-card:hover {
+    .tile:hover {
       transform: translateY(-4px);
-      border-color: rgba(34, 199, 148, 0.95);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 1);
+      border-color: rgba(34,199,148,0.95);
+      box-shadow: 0 20px 48px rgba(0,0,0,1);
     }
 
-    .item-image {
-      position: relative;
-      overflow: hidden;
+    .tile.tall { grid-row: span 2; }
+    .tile.feature { grid-column: span 8; grid-row: span 2; }
+
+    @media (max-width: 980px) {
+      .tile { grid-column: span 6; }
+      .tile.feature { grid-column: span 12; }
+    }
+    @media (max-width: 600px) {
+      .tile { grid-column: span 12; }
+    }
+
+    .tile-img {
       aspect-ratio: 4 / 5;
-      background: radial-gradient(circle at top, #27272f, #020617);
+      background: radial-gradient(circle at top, #2a2a33, #020617);
+      position: relative;
     }
 
-    .item-image img {
+    .tile.feature .tile-img { aspect-ratio: 16 / 9; }
+
+    .tile-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .item-tag {
+    .tag {
       position: absolute;
-      bottom: 0.5rem;
-      left: 0.5rem;
-      padding: 0.2rem 0.55rem;
+      left: 10px;
+      bottom: 10px;
+      padding: 0.22rem 0.55rem;
       border-radius: 999px;
-      font-size: 0.7rem;
-      background: rgba(2, 6, 23, 0.98);
+      font-size: 0.72rem;
+      background: rgba(2,6,23,0.9);
       color: var(--amethyst-soft);
       border: 1px solid var(--amethyst);
       text-transform: uppercase;
       letter-spacing: 0.16em;
     }
 
-    .item-body {
-      padding: 0.7rem 0.75rem 0.7rem;
+    .tile-body {
+      padding: 0.75rem 0.85rem 0.85rem;
     }
 
-    .item-title {
-      font-size: 0.9rem;
-      margin-bottom: 0.15rem;
+    .tile-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.02rem;
+      margin-bottom: 0.25rem;
     }
 
-    .item-meta {
+    .tile-meta {
       display: flex;
       justify-content: space-between;
+      gap: 0.5rem;
       align-items: center;
-      font-size: 0.8rem;
       color: var(--muted);
-      gap: 0.4rem;
+      font-size: 0.82rem;
     }
 
-    .item-price {
+    .tile-meta .price {
       color: var(--accent-soft);
       font-weight: 500;
     }
 
-    .item-cta {
-      margin-top: 0.4rem;
+    .tile-cta {
+      margin-top: 0.45rem;
       font-size: 0.75rem;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.16em;
     }
 
-    /* Panel (email me directly) */
-
+    /* Inquiry panel (right) */
     .panel {
-      background:
-        radial-gradient(circle at top, rgba(6, 78, 59, 0.98), rgba(3, 7, 18, 0.98));
       border-radius: var(--radius-lg);
       border: 1px solid rgba(63, 55, 80, 0.98);
-      padding: 1.2rem 1.1rem;
+      background: radial-gradient(circle at top, rgba(6, 78, 59, 0.98), rgba(3, 7, 18, 0.98));
+      padding: 1.1rem 1.05rem;
       box-shadow: var(--shadow-soft);
       position: sticky;
       top: 5rem;
+    }
+
+    @media (max-width: 980px) {
+      .panel { position: relative; top: auto; }
     }
 
     .panel h3 {
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     .panel p {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--muted);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.9rem;
     }
 
     .selected-item {
-      background: #020617;
+      background: rgba(2, 6, 23, 0.92);
       border-radius: var(--radius-md);
       border: 1px solid rgba(129, 140, 248, 0.9);
       padding: 0.6rem 0.7rem;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.85rem;
       font-size: 0.8rem;
     }
 
@@ -513,30 +619,12 @@
       margin-bottom: 0.2rem;
     }
 
-    .selected-item-name {
-      font-weight: 500;
-      color: var(--amethyst-soft);
-    }
+    .selected-item-name { font-weight: 500; color: var(--amethyst-soft); }
 
-    /* Form fields in the panel */
-
-    .form-field {
-      margin-bottom: 0.6rem;
-      font-size: 0.8rem;
-    }
-
-    .form-field label {
-      display: block;
-      margin-bottom: 0.2rem;
-      color: var(--accent-soft);
-    }
-
-    .form-field small {
-      display: block;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
-    }
+    /* Form fields */
+    .form-field { margin-bottom: 0.6rem; font-size: 0.8rem; }
+    .form-field label { display: block; margin-bottom: 0.2rem; color: var(--accent-soft); }
+    .form-field small { display: block; font-size: 0.7rem; color: var(--muted); margin-top: 0.12rem; }
 
     .form-field input,
     .form-field select,
@@ -546,47 +634,45 @@
       border: 1px solid rgba(148, 163, 184, 0.7);
       background: rgba(9, 13, 28, 0.98);
       color: var(--text);
-      padding: 0.4rem 0.7rem;
-      font-size: 0.8rem;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.82rem;
       outline: none;
     }
 
     .form-field textarea {
       border-radius: 12px;
-      min-height: 70px;
+      min-height: 78px;
       resize: vertical;
     }
 
     .form-field input[type="file"] {
-      padding: 0.3rem 0.4rem;
+      padding: 0.32rem 0.45rem;
       border-radius: 999px;
       font-size: 0.75rem;
-      background: rgba(9, 13, 28, 0.98);
     }
 
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
       border-color: rgba(34, 199, 148, 0.9);
-      box-shadow: 0 0 0 1px rgba(34, 199, 148, 0.4);
+      box-shadow: 0 0 0 1px rgba(34, 199, 148, 0.35);
     }
 
     .button-primary {
       border-radius: 999px;
       border: 1px solid rgba(34, 199, 148, 0.95);
-      padding: 0.55rem 0.9rem;
-      background:
-        radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
+      padding: 0.6rem 0.95rem;
+      background: radial-gradient(circle at 30% 0%, rgba(34, 199, 148, 0.3), rgba(6, 78, 59, 0.98));
       color: var(--text);
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       cursor: pointer;
-      margin-top: 0.6rem;
+      margin-top: 0.65rem;
       box-shadow: 0 18px 50px var(--emerald-glow);
       width: 100%;
       text-align: center;
-      transition: transform 0.15s ease-out, filter 0.15s.ease-out, box-shadow 0.15s ease-out;
+      transition: transform 0.15s ease-out, filter 0.15s ease-out, box-shadow 0.15s ease-out;
     }
 
     .button-primary:hover {
@@ -598,24 +684,87 @@
     .button-secondary {
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.85);
-      padding: 0.45rem 0.8rem;
+      padding: 0.5rem 0.85rem;
       background: rgba(9, 13, 28, 0.98);
       color: var(--muted);
       font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       cursor: pointer;
-      margin-top: 0.5rem;
+      margin-top: 0.55rem;
       width: 100%;
       text-align: center;
     }
 
-    .small-note {
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-top: 0.6rem;
+    .small-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.65rem; }
+
+    /* FAQ accordion */
+    .faq {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
     }
 
+    details.faq-item {
+      border-radius: 14px;
+      border: 1px solid rgba(63,55,80,0.9);
+      background: rgba(9,13,28,0.84);
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.55);
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 0.85rem 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    details.faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-q {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .faq-q small {
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chev {
+      width: 34px; height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      background: rgba(2,6,23,0.65);
+      flex: 0 0 auto;
+      transition: transform 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    details[open] .chev {
+      transform: rotate(180deg);
+      border-color: rgba(34,199,148,0.7);
+    }
+
+    .faq-a {
+      padding: 0 0.95rem 0.95rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Calendar */
     .calendar-frame {
       margin-top: 0.75rem;
       border-radius: 12px;
@@ -632,11 +781,7 @@
       padding: 1rem;
     }
 
-    .calendar-frame iframe {
-      width: 100%;
-      border: 0;
-      height: 420px;
-    }
+    .calendar-frame iframe { width: 100%; border: 0; height: 420px; }
 
     footer {
       margin-top: 2.25rem;
@@ -644,11 +789,10 @@
       color: #6b7280;
       text-align: center;
     }
-
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <div class="brand">
       <div class="brand-icon">✂️</div>
@@ -659,8 +803,10 @@
     </div>
 
     <nav>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#gallery">Lookbook</a>
+      <a href="#faq">FAQ</a>
       <a href="#calendar">Availability</a>
       <a href="#order" class="primary">Request a Piece</a>
     </nav>
@@ -668,304 +814,329 @@
 
   <main class="page">
     <section class="layout">
-      <!-- Left: Intro + About + Services + Gallery + FAQ -->
+      <!-- LEFT CONTENT -->
       <div>
-        <!-- Intro -->
-        <section class="intro-card" id="top">
-          <div class="intro-badge">
-            <div class="intro-badge-dot"></div>
-            <span>Accepting limited custom bookings</span>
-          </div>
-          <h2>
-            Fashion stitched with a little <span>magic</span>.
-          </h2>
-          <p class="intro-subtitle">
-            Kate, also known as “Kate the Stitch Witch,” specializes in modern gowns, cosplay, performance wear,
-            lingerie, and corsets – all crafted to fit your body, your event, and your story.
-          </p>
-
-          <div class="intro-list">
-            <div class="pill">Custom gowns &amp; formalwear</div>
-            <div class="pill">Cosplay &amp; performance costumes</div>
-            <div class="pill">Lingerie &amp; corsetry</div>
-            <div class="pill">Alterations (by appointment)</div>
-          </div>
-
-          <div class="intro-footer">
-            <p class="intro-note">
-              Tap a look in the gallery to pre-fill your inquiry, or email about a completely new design.
-              Kate will follow up with pricing, timeline, and fitting details based on your idea and availability.
+        <!-- HERO -->
+        <section class="hero" id="top">
+          <div class="hero-left">
+            <div class="hero-badge"><span class="dot"></span> Accepting limited custom bookings</div>
+            <h2>Fashion stitched with a little <span>magic</span>.</h2>
+            <p class="hero-sub">
+              Modern gowns, cosplay, performance wear, lingerie, and corsetry — crafted to fit your body,
+              your event, and your story.
             </p>
+
+            <div class="hero-pills">
+              <div class="pill">Custom formalwear</div>
+              <div class="pill">Cosplay &amp; costumes</div>
+              <div class="pill">Performance wear</div>
+              <div class="pill">Lingerie &amp; corsetry</div>
+              <div class="pill">Alterations</div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="lookbook">
+              <div class="lookbook-top">
+                <h3>Lookbook</h3>
+                <span>tap looks below</span>
+              </div>
+              <div class="lookbook-grid">
+                <div class="shot feature">
+                  <div class="shot-label">Editorial Feature</div>
+                </div>
+                <div class="shot"><div class="shot-label">Gown</div></div>
+                <div class="shot"><div class="shot-label">Corsetry</div></div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- About the Designer -->
-        <section id="about" class="calendar-section about-section" style="margin-top: 2.5rem;">
-          <div class="calendar-header">
+        <!-- ABOUT -->
+        <section id="about" class="section about">
+          <div class="section-head">
             <h3>About the Designer</h3>
-            <p>
-              The story and skill behind the magic ✨
-            </p>
+            <p>The story and skill behind the magic ✨</p>
           </div>
 
-          <div style="font-size: 0.9rem; line-height: 1.6;">
+          <div style="font-size: 0.95rem; line-height: 1.7;">
             <p style="margin-bottom: 1rem;">
-              Katelyn “Kate the Stitch Witch” Law Sarver is the owner and designer behind Wickedly Stitched by Kate. 
-              A Franklin County native with over a decade of sewing experience, Kate creates custom gowns, cosplay, 
+              Katelyn “Kate the Stitch Witch” Law Sarver is the owner and designer behind Wickedly Stitched by Kate.
+              A Franklin County native with over a decade of sewing experience, Kate creates custom gowns, cosplay,
               performance wear, corsetry, lingerie, and alterations that celebrate every body and every story.
             </p>
 
             <p style="margin-bottom: 1rem;">
-              Her passion for design began young, inspired by the confidence a well-crafted garment can unlock. After caring 
-              for family and honoring a promise to her late mother—her greatest supporter—Kate turned her dream into reality: 
+              Her passion for design began young, inspired by the confidence a well-crafted garment can unlock. After caring
+              for family and honoring a promise to her late mother—her greatest supporter—Kate turned her dream into reality:
               a studio where fashion is stitched with a little magic.
             </p>
 
             <p>
-              As an award-winning cosplayer and professional seamstress with experience in both custom work and industrial 
-              production, Kate blends technical skill with bold creativity. Whether you’re stepping onto the stage, walking 
+              As an award-winning cosplayer and professional seamstress with experience in both custom work and industrial
+              production, Kate blends technical skill with bold creativity. Whether you’re stepping onto the stage, walking
               down the aisle, or transforming into a character you love—Kate ensures you feel powerful, seen, and spectacular.
             </p>
           </div>
         </section>
 
-        <!-- Services section -->
-        <section id="services" class="calendar-section" style="margin-top: 2.5rem;">
-          <div class="calendar-header">
-            <h3>Services &amp; Custom Work</h3>
-            <p>
-              Every piece is made to order. Pricing is based on design complexity, materials, and timeline. 
-              Below are general guidelines—final quotes are provided after consultation.
-            </p>
+        <!-- SERVICES -->
+        <section id="services" class="section">
+          <div class="section-head">
+            <h3>Services</h3>
+            <p>Skimmable pricing guidance — final quotes after consultation.</p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
-            <!-- FORMAL GOWNS -->
-            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem;">
-              Formal Gowns
-            </h4>
-            <p style="margin-bottom: 0.75rem;">
-              Custom gowns designed and fitted for your body and event. Most gowns require around 
-              <strong>40 or more hours of labor</strong> plus all <strong>fabric and supply costs</strong>. 
-              Because each design is unique, gown pricing is <strong>quote-based</strong>. 
-              <em>Message for a personalized quote based on your design, fabrics, and timeline.</em>
-            </p>
+          <div class="services-grid">
+            <article class="svc">
+              <h4>Formal Gowns</h4>
+              <div class="rate">Quote-based · 40+ hrs + materials</div>
+              <ul>
+                <li>Custom design + fittings for your event</li>
+                <li>Structured bodices, draping, embellishments</li>
+                <li>Timeline depends on complexity and booking</li>
+              </ul>
+              <div class="note">Message for a personalized quote based on design, fabrics, and deadline.</div>
+            </article>
 
-            <!-- COSPLAY BUILDS -->
-            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
-              Cosplay Builds
-            </h4>
-            <p style="margin-bottom: 0.75rem;">
-              Character-inspired looks, armor-style builds, and performance-ready cosplay. Cosplay is priced similarly 
-              to formal gowns—many projects require <strong>40+ hours of labor</strong> plus materials, and are 
-              <strong>quoted individually</strong> after discussing the character, details, and deadline.
-            </p>
+            <article class="svc">
+              <h4>Cosplay Builds</h4>
+              <div class="rate">Quote-based · 40+ hrs + materials</div>
+              <ul>
+                <li>Character-inspired looks + performance-ready details</li>
+                <li>Layering, tailoring, specialty finishes</li>
+                <li>Fit-focused builds for comfort + wow factor</li>
+              </ul>
+              <div class="note">Pricing varies by character, detail level, and time frame.</div>
+            </article>
 
-            <!-- PERFORMANCE WEAR -->
-            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
-              Performance Wear
-            </h4>
-            <p style="margin-bottom: 0.75rem;">
-              Custom costumes and stage pieces for dancers, performers, and entertainers. Standard projects are billed at 
-              <strong>$35/hour for labor</strong>, plus materials. Rush projects follow the same rush structure as other 
-              custom builds, with higher hourly rates if your deadline is under a month.
-            </p>
+            <article class="svc">
+              <h4>Performance Wear</h4>
+              <div class="rate">$35/hr + materials · rush rates apply</div>
+              <ul>
+                <li>Dancers, performers, stage pieces</li>
+                <li>Stretch bases, secure construction, comfort fit</li>
+                <li>Design support for movement and impact</li>
+              </ul>
+              <div class="note">Rush timelines billed at higher hourly rates when under a month.</div>
+            </article>
 
-            <!-- LINGERIE & CORSETRY -->
-            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
-              Lingerie &amp; Corsetry
-            </h4>
-            <p style="margin-bottom: 0.75rem;">
-              Custom-fit corsets, bodysuits, and lingerie sets built for support, comfort, and confidence. Standard labor 
-              is billed at <strong>$40/hour</strong>, plus materials. Rush projects use the same rush rates as other custom work 
-              when deadlines are tight.
-            </p>
+            <article class="svc">
+              <h4>Lingerie &amp; Corsetry</h4>
+              <div class="rate">$40/hr + materials · rush rates apply</div>
+              <ul>
+                <li>Custom-fit corsets, bodysuits, lingerie sets</li>
+                <li>Support + comfort + confidence</li>
+                <li>Built for your measurements and vision</li>
+              </ul>
+              <div class="note">Rush timelines follow the same structure as other custom work.</div>
+            </article>
 
-            <!-- ALTERATIONS -->
-            <h4 style="text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; margin-bottom: 0.25rem; margin-top: 1rem;">
-              Alterations
-            </h4>
-            <p style="margin-bottom: 0.75rem;">
-              Select alterations on formalwear and special pieces to improve fit and comfort. Standard alteration work is 
-              billed at <strong>$30/hour</strong> for labor. Rush alterations are billed at a higher hourly rate when you 
-              need them completed quickly.
-            </p>
-
-            <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem;">
-              For all projects, final pricing is confirmed after a short consultation about design, fabric choices, 
-              timeline, and fittings. Rush projects may be billed at higher hourly rates depending on your deadline.
-            </p>
+            <article class="svc wide">
+              <h4>Alterations</h4>
+              <div class="rate">$30/hr + materials · rush: $50/hr (under 1 month) · $70/hr (under 2 weeks)</div>
+              <ul>
+                <li>Select formalwear and special pieces by appointment</li>
+                <li>Fit and comfort improvements</li>
+                <li>Rush availability depends on schedule</li>
+              </ul>
+            </article>
           </div>
         </section>
 
-        <!-- Gallery -->
-        <section id="gallery">
-          <div class="section-header">
-            <h3>Featured Pieces</h3>
-            <p>Click any look below to pre-fill your inquiry with that design (optional).</p>
+        <!-- LOOKBOOK / GALLERY -->
+        <section id="gallery" class="section">
+          <div class="section-head">
+            <h3>Lookbook</h3>
+            <p>Tap any look to pre-fill your inquiry (optional).</p>
           </div>
 
-          <div class="gallery-grid">
-            <!-- ITEM 1 -->
-            <article class="item-card"
+          <div class="lookbook-tiles">
+            <!-- FEATURE -->
+            <article class="tile feature"
               data-item-name="Midnight Siren Gown"
               data-item-type="Formal gown"
               data-item-price="Custom quote">
-              <div class="item-image">
-                <img src="https://via.placeholder.com/600x800?text=Midnight+Siren+Gown" alt="Midnight Siren Gown">
-                <span class="item-tag">Formal</span>
+              <div class="tile-img">
+                <img src="https://via.placeholder.com/1200x675?text=Editorial+Feature+Look" alt="Editorial feature look">
+                <span class="tag">Feature</span>
               </div>
-              <div class="item-body">
-                <div class="item-title">Midnight Siren Gown</div>
-                <div class="item-meta">
+              <div class="tile-body">
+                <div class="tile-title">Midnight Siren Gown</div>
+                <div class="tile-meta">
                   <span>Structured bodice · Flowing skirt</span>
-                  <span class="item-price">Quote-based</span>
+                  <span class="price">Quote-based</span>
                 </div>
-                <div class="item-cta">Use this as inspiration</div>
+                <div class="tile-cta">Use this as inspiration</div>
               </div>
             </article>
 
-            <!-- ITEM 2 -->
-            <article class="item-card"
+            <!-- TALL -->
+            <article class="tile tall"
               data-item-name="Stitch Witch Cosplay"
               data-item-type="Cosplay build"
               data-item-price="Custom quote">
-              <div class="item-image">
-                <img src="https://via.placeholder.com/600x800?text=Stitch+Witch+Cosplay" alt="Stitch Witch cosplay outfit">
-                <span class="item-tag">Cosplay</span>
+              <div class="tile-img">
+                <img src="https://via.placeholder.com/600x800?text=Cosplay+Look" alt="Cosplay look">
+                <span class="tag">Cosplay</span>
               </div>
-              <div class="item-body">
-                <div class="item-title">Stitch Witch Cosplay</div>
-                <div class="item-meta">
-                  <span>Layered textures · Dramatic details</span>
-                  <span class="item-price">Custom quote</span>
+              <div class="tile-body">
+                <div class="tile-title">Stitch Witch Cosplay</div>
+                <div class="tile-meta">
+                  <span>Layered textures</span>
+                  <span class="price">Quote-based</span>
                 </div>
-                <div class="item-cta">Use this as inspiration</div>
+                <div class="tile-cta">Use this as inspiration</div>
               </div>
             </article>
 
-            <!-- ITEM 3 -->
-            <article class="item-card"
+            <article class="tile"
               data-item-name="Ember Corset Set"
               data-item-type="Lingerie & corsetry"
               data-item-price="$40/hr + materials">
-              <div class="item-image">
-                <img src="https://via.placeholder.com/600x800?text=Ember+Corset+Set" alt="Ember corset lingerie set">
-                <span class="item-tag">Corsetry</span>
+              <div class="tile-img">
+                <img src="https://via.placeholder.com/600x800?text=Corset+Set" alt="Corset set">
+                <span class="tag">Corsetry</span>
               </div>
-              <div class="item-body">
-                <div class="item-title">Ember Corset Set</div>
-                <div class="item-meta">
-                  <span>Boned bodice · Custom sizing</span>
-                  <span class="item-price">$40/hr + materials</span>
+              <div class="tile-body">
+                <div class="tile-title">Ember Corset Set</div>
+                <div class="tile-meta">
+                  <span>Boned bodice</span>
+                  <span class="price">$40/hr + materials</span>
                 </div>
-                <div class="item-cta">Use this as inspiration</div>
+                <div class="tile-cta">Use this as inspiration</div>
               </div>
             </article>
 
-            <!-- ITEM 4 -->
-            <article class="item-card"
+            <article class="tile"
               data-item-name="Stage Ember Jumpsuit"
               data-item-type="Performance wear"
               data-item-price="$35/hr + materials">
-              <div class="item-image">
-                <img src="https://via.placeholder.com/600x800?text=Performance+Jumpsuit" alt="Sparkling performance jumpsuit">
-                <span class="item-tag">Performance</span>
+              <div class="tile-img">
+                <img src="https://via.placeholder.com/600x800?text=Performance+Wear" alt="Performance wear">
+                <span class="tag">Performance</span>
               </div>
-              <div class="item-body">
-                <div class="item-title">Stage Ember Jumpsuit</div>
-                <div class="item-meta">
-                  <span>Stretch base · Rhinestone detail</span>
-                  <span class="item-price">$35/hr + materials</span>
+              <div class="tile-body">
+                <div class="tile-title">Stage Ember Jumpsuit</div>
+                <div class="tile-meta">
+                  <span>Stretch base · Detail</span>
+                  <span class="price">$35/hr + materials</span>
                 </div>
-                <div class="item-cta">Use this as inspiration</div>
+                <div class="tile-cta">Use this as inspiration</div>
               </div>
             </article>
           </div>
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="calendar-section" style="margin-top: 2.5rem;">
-          <div class="calendar-header">
+        <section id="faq" class="section">
+          <div class="section-head">
             <h3>FAQ &amp; Policies</h3>
-            <p>
-              A quick look at how custom work is booked, priced, and scheduled with Wickedly Stitched by Kate.
-            </p>
+            <p>Quick answers — clean and easy to scan.</p>
           </div>
 
-          <div style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Do you require a deposit?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work on your project. 
-              The remaining balance is due at or before pickup/final delivery.
-            </p>
+          <div class="faq">
+            <details class="faq-item">
+              <summary>
+                <div class="faq-q">
+                  <small>Booking</small>
+                  <span>Do you require a deposit?</span>
+                </div>
+                <div class="chev">⌄</div>
+              </summary>
+              <div class="faq-a">
+                Yes. A <strong>50% deposit</strong> is required to reserve your spot on the schedule and begin work.
+                The remaining balance is due at or before pickup/final delivery.
+              </div>
+            </details>
 
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do rush orders work?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              If you need your piece on a tight timeline, rush pricing applies to labor so that late requests are
-              scheduled fairly and sustainably:
-            </p>
-            <ul style="margin-left: 1.1rem; margin-bottom: 0.9rem; font-size: 0.9rem;">
-              <li>
-                For all custom builds (formal gowns, cosplay, performance wear, lingerie and corsetry):
-                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
-                  <li>Deadlines <strong>under one month</strong> are billed at <strong>$60/hour</strong> for labor.</li>
-                  <li>Deadlines <strong>under two weeks</strong> are billed at <strong>$80/hour</strong> for labor.</li>
+            <details class="faq-item">
+              <summary>
+                <div class="faq-q">
+                  <small>Rush timelines</small>
+                  <span>How do rush orders work?</span>
+                </div>
+                <div class="chev">⌄</div>
+              </summary>
+              <div class="faq-a">
+                For custom builds (formal gowns, cosplay, performance wear, lingerie/corsetry):
+                <ul style="margin: 0.6rem 0 0.6rem 1.1rem;">
+                  <li>Deadlines <strong>under one month</strong>: <strong>$60/hour</strong> labor</li>
+                  <li>Deadlines <strong>under two weeks</strong>: <strong>$80/hour</strong> labor</li>
                 </ul>
-              </li>
-              <li style="margin-top: 0.5rem;">
                 For alterations:
-                <ul style="margin-left: 1.1rem; margin-top: 0.25rem;">
-                  <li>Standard alteration work is <strong>$30/hour</strong>.</li>
-                  <li>Rush alterations with deadlines <strong>under one month</strong> are billed at <strong>$50/hour</strong>.</li>
-                  <li>Rush alterations with deadlines <strong>under two weeks</strong> are billed at <strong>$70/hour</strong>.</li>
+                <ul style="margin: 0.6rem 0 0.6rem 1.1rem;">
+                  <li>Standard: <strong>$30/hour</strong></li>
+                  <li>Under one month: <strong>$50/hour</strong></li>
+                  <li>Under two weeks: <strong>$70/hour</strong></li>
                 </ul>
-              </li>
-            </ul>
-            <p style="margin-bottom: 0.9rem;">
-              Rush availability depends on Kate’s current workload. Materials and supplies are always charged separately from labor.
-            </p>
+                Rush availability depends on the current schedule. Materials are separate from labor.
+              </div>
+            </details>
 
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How long does a formal gown take?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Most custom gowns require at least <strong>40 hours of labor</strong> plus time for sourcing materials and fittings. 
-              It’s best to reach out as early as possible, especially for weddings, formals, or major events.
-            </p>
+            <details class="faq-item">
+              <summary>
+                <div class="faq-q">
+                  <small>Timing</small>
+                  <span>How long does a formal gown take?</span>
+                </div>
+                <div class="chev">⌄</div>
+              </summary>
+              <div class="faq-a">
+                Most custom gowns require at least <strong>40 hours of labor</strong> plus sourcing time and fittings.
+                Reach out as early as possible for weddings, formals, or major events.
+              </div>
+            </details>
 
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">Where are fittings done? Do you ship?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Fittings are primarily available in the Franklin County, VA area. Some items—such as lingerie, certain cosplay 
-              elements, and select performance pieces—may be able to be shipped depending on the design and fit requirements. 
-              Full gowns and heavily structured garments typically require in-person fittings.
-            </p>
+            <details class="faq-item">
+              <summary>
+                <div class="faq-q">
+                  <small>Fittings</small>
+                  <span>Where are fittings done? Do you ship?</span>
+                </div>
+                <div class="chev">⌄</div>
+              </summary>
+              <div class="faq-a">
+                Fittings are primarily available in the Franklin County, VA area. Some items may be able to be shipped
+                depending on design and fit requirements. Full gowns and heavily structured garments typically require
+                in-person fittings.
+              </div>
+            </details>
 
-            <h4 style="font-size: 0.9rem; margin-bottom: 0.25rem;">How do I get a quote?</h4>
-            <p style="margin-bottom: 0.9rem;">
-              Click <strong>Request a Piece</strong> to email directly about your project, or email 
-              <a href="mailto:katethestitchwitch@gmail.com" style="color: var(--accent-soft);">
-                katethestitchwitch@gmail.com
-              </a>. Share your idea, event date, and any inspiration photos. Kate will follow up with questions, a 
-              timeline estimate, and a custom quote.
-            </p>
+            <details class="faq-item">
+              <summary>
+                <div class="faq-q">
+                  <small>Quotes</small>
+                  <span>How do I get a quote?</span>
+                </div>
+                <div class="chev">⌄</div>
+              </summary>
+              <div class="faq-a">
+                Click <strong>Request a Piece</strong> to email directly, or email
+                <a href="mailto:katethestitchwitch@gmail.com" style="color: var(--accent-soft); font-weight: 600;">
+                  katethestitchwitch@gmail.com
+                </a>.
+                Share your idea, event date, and any inspiration photos. Kate will follow up with questions, a timeline estimate,
+                and a custom quote.
+              </div>
+            </details>
           </div>
         </section>
+
       </div>
 
-      <!-- Right: Email panel -->
+      <!-- RIGHT: REQUEST PANEL -->
       <aside class="panel" id="order">
-        <h3>Ready to talk details?</h3>
+        <h3>Request a Piece</h3>
         <p>
-          Share your idea, event date, pick from the options below, and upload any reference photos.
-          Selecting a design from the gallery is completely optional – you can use one as inspiration
-          or just describe your concept from scratch.
-          When you click email, you’ll be able to attach those same images in your mail app.
-          Kate will follow up with questions, a timeline estimate, and a custom quote.
+          Share your idea + event date, choose options below, and upload reference photos.
+          Selecting a look from the Lookbook is optional — it just helps communicate the vibe.
         </p>
 
         <div class="selected-item">
-          <div class="selected-item-label">Selected design (optional)</div>
+          <div class="selected-item-label">Selected inspiration (optional)</div>
           <div class="selected-item-name" id="selectedItemName">
-            Optional – you can tap a piece in the gallery to use as inspiration, or leave this blank and just describe your idea below.
+            Optional – tap a look in the Lookbook, or leave blank and describe your idea below.
           </div>
         </div>
 
@@ -1005,57 +1176,40 @@
 
         <div class="form-field">
           <label for="ideaDetails">Tell Kate about your idea</label>
-          <textarea id="ideaDetails" placeholder="Character, colors, fabrics, vibes, or anything else you’d like to share."></textarea>
+          <textarea id="ideaDetails" placeholder="Character, colors, fabrics, vibes, and anything else you want to share."></textarea>
         </div>
 
         <div class="form-field">
           <label for="refPhotos">Reference photos</label>
           <input id="refPhotos" type="file" accept="image/*" multiple>
-          <small>Select any screenshots, inspo images, or photos here. Then attach these same files in the email window after it opens.</small>
+          <small>Select inspo images here. Then attach these same files in the email window after it opens.</small>
         </div>
 
         <button type="button" class="button-primary" onclick="emailKateDirectly()">
           Email me directly
         </button>
 
-        <button
-          type="button"
-          class="button-secondary"
-          onclick="resetSelection()">
-          Clear selected design & form
+        <button type="button" class="button-secondary" onclick="resetSelection()">
+          Clear selection & form
         </button>
 
         <p class="small-note">
-          This will open your email app with a pre-filled message to 
-          <a href="mailto:katethestitchwitch@gmail.com">katethestitchwitch@gmail.com</a>. 
+          Opens your email app to <a href="mailto:katethestitchwitch@gmail.com">katethestitchwitch@gmail.com</a>.
           You can edit everything and attach your reference photos before sending.
         </p>
       </aside>
     </section>
 
-    <!-- Calendar Section -->
-    <section class="calendar-section" id="calendar">
-      <div class="calendar-header">
+    <!-- CALENDAR -->
+    <section class="section" id="calendar" style="margin-top: 1.75rem;">
+      <div class="section-head">
         <h3>Studio Availability</h3>
-        <p>
-          Use the calendar below to check general availability for consultations, fittings, and pickups.
-          Final bookings will always be confirmed directly with you via email at
-          <strong>katethestitchwitch@gmail.com</strong>.
-        </p>
+        <p>Check general availability for consultations, fittings, and pickups.</p>
       </div>
 
       <div class="calendar-frame">
-        <!-- Example embed goes here when you’re ready:
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
-        -->
-
         <span>
-          Calendar coming soon. Once you create a booking calendar and copy its embed code,
-          paste the iframe here to show your live availability.
+          Calendar coming soon. When you have your embed code, paste the iframe here.
         </span>
       </div>
     </section>
@@ -1068,16 +1222,18 @@
   </main>
 
   <script>
-    // Handle item selection -> save for email
-    const cards = document.querySelectorAll('.item-card');
+    // Lookbook tile selection -> save for email
+    const tiles = document.querySelectorAll('.tile');
     const selectedNameEl = document.getElementById('selectedItemName');
     let selectedDesign = '';
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const name = card.getAttribute('data-item-name');
-        const type = card.getAttribute('data-item-type');
-        const price = card.getAttribute('data-item-price');
+    tiles.forEach(tile => {
+      tile.addEventListener('click', () => {
+        const name = tile.getAttribute('data-item-name');
+        const type = tile.getAttribute('data-item-type');
+        const price = tile.getAttribute('data-item-price');
+
+        if (!name || !type || !price) return;
 
         const display = name + ' · ' + type + ' · ' + price;
         selectedDesign = display;
@@ -1090,16 +1246,14 @@
     function resetSelection() {
       selectedDesign = '';
       selectedNameEl.textContent =
-        'Optional – you can tap a piece in the gallery to use as inspiration, or leave this blank and just describe your idea below.';
+        'Optional – tap a look in the Lookbook, or leave blank and describe your idea below.';
       document.getElementById('clientName').value = '';
       document.getElementById('eventDate').value = '';
       document.getElementById('projectType').value = '';
       document.getElementById('timeline').value = '';
       document.getElementById('ideaDetails').value = '';
       const refPhotos = document.getElementById('refPhotos');
-      if (refPhotos) {
-        refPhotos.value = '';
-      }
+      if (refPhotos) refPhotos.value = '';
     }
 
     function emailKateDirectly() {
@@ -1114,13 +1268,10 @@
 
       let body = '';
 
-      if (name) {
-        body += 'Name: ' + name + '\n\n';
-      }
+      if (name) body += 'Name: ' + name + '\n\n';
 
       if (selectedDesign) {
-        body += 'Selected inspiration from website (optional):\n' +
-                selectedDesign + '\n\n';
+        body += 'Selected inspiration from website (optional):\n' + selectedDesign + '\n\n';
       }
 
       if (projectType || eventDate || timeline) {
@@ -1132,13 +1283,8 @@
       }
 
       body += 'Idea / concept:\n';
-      if (ideaDetails) {
-        body += ideaDetails + '\n\n';
-      } else {
-        body += '(You can describe your design idea here.)\n\n';
-      }
-
-      body += 'Please attach your reference photos / inspiration images to this email before sending so Kate can see your vision.\n\n';
+      body += (ideaDetails ? ideaDetails : '(Describe your design idea here.)') + '\n\n';
+      body += 'Please attach your reference photos / inspiration images to this email before sending.\n\n';
       body += 'Thank you!\n';
 
       const mailtoLink =
@@ -1149,7 +1295,6 @@
       window.location.href = mailtoLink;
     }
 
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
